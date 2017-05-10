@@ -1,0 +1,112 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/image-swiper.css">
+<div id='product' >
+    <div class="example-container">
+        <div class="am-tabs" data-am-tabs="" style='background: #FFF'>
+            <div style='padding: 1rem 0px'>
+                    <div ng-repeat='product in productList' ng-if='product.active'>
+                        <div class="selected_item" ng-repeat='item in product.filtration' ng-if='!item.for'>
+                            <i class='glyphicon glyphicon-play' style='font-size: 1.3rem'></i>
+                            <span ng-if='$parent.language == "chinese"' ng-bind='item.name'></span>
+                            <span ng-if='$parent.language == "english"' ng-bind='item.en_name'></span>
+                            <ul style='margin:0px'>
+                                <li ng-repeat='value in item.value' value='{{value.value}}' ng-if='$parent.language == "chinese"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.key'></li>
+                                <li ng-repeat='value in item.value' value='{{value.value}}' ng-if='$parent.language == "english"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.en_key||value.key'></li>
+                            </ul>
+                        </div>
+                        <div class="selected_item" ng-repeat='item in product.filtration' ng-if='item.for' style='display: flex;align-items: center;'>
+                            <i class='glyphicon glyphicon-play' style='font-size: 1.3rem'></i>
+                            <span ng-if='$parent.language == "chinese"' style='height:100%' ng-bind='item.name'></span>
+                            <span ng-if='$parent.language == "english"' style='height:100%' ng-bind='item.en_name'></span>
+                            <div style='display: inline-block;width:80%'>
+                                  <div ng-repeat='values in item.value' >
+                                    <ul  style='margin:0px'>
+                                    <li ng-repeat='value in values' value='{{value.value}}' ng-if='$parent.language == "chinese"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.key'></li>
+                                    <li ng-repeat='value in values' value='{{value.value}}' ng-if='$parent.language == "english"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.en_key||value.key'></li>
+                                </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+    <div style="display:table;position:relative;background:#f5f5f5;min-height: 400px;width: 100%;">
+        <!-- <div style="width:200px;height:500px;background:#FFF;display:table-cell">
+
+        </div> -->
+        <div class="productList" ng-repeat='product in productList' ng-if='product.active'>
+            <div class="products_cell">
+                <div class="products" ng-repeat='items in list.body[product.name]' >
+                    <div style='margin:2px;position: relative;'>
+                        <a style='background-image: url({{items.imgUrls}});background-repeat: no-repeat;background-size: 100% 100%;border-radius: 4px'>
+                        <div style='' class='selectShadow'>
+                            <div class='icon_plus' ng-click='showpic(items.imgUrls,items.imgUrlList)'>
+                                <span>+</span>
+                            </div>
+                            <i class='glyphicon glyphicon-list-alt'  data-toggle="modal" data-target="#myModal" ng-click='showDetail(list.head[product.name],items)' style='margin-left: 20px;'></i>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="products_detail">
+                        <div ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
+                            <span ng-if='$parent.language=="chinese"' ng-bind='item.key'></span>
+                            <span ng-if='$parent.language=="english"' ng-bind='item.value'></span>
+                            <span ng-bind='items[item.value]'></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div ng-if="list.body[product.name].length>0">
+                <i class='glyphicon glyphicon-chevron-right' ng-if='product.pageNo < product.totalPage' style='cursor:pointer;position:absolute;right:2rem;top:50%;font-size:3rem;color:#7c6aa6' ng-click='next(product.name)'></i>
+                <i class='glyphicon glyphicon-chevron-left' ng-if='product.pageNo != 1'style='cursor:pointer;position:absolute;left:2rem;top:50%;font-size:3rem;color:#7c6aa6' ng-click='before(product.name)'></i>
+
+                <p style='text-align:center' ng-if='$parent.language == "chinese"'>第{{product.pageNo}}页</p>
+                <p style='text-align:center' ng-if='$parent.language == "english"'>page {{product.pageNo}}</p>
+            </div>
+            <p style='text-align:center;margin-top:4rem' ng-if="list.body[product.name].length==0">没有此类型产品</p>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document" style='margin:100px auto;border-radius: 0px'>
+        <div class="modal-content" sylte='border-radius: 4px;'>
+          <div class="modal-header" style='position:relative;'>
+            <i class='glyphicon glyphicon-remove' class="close" data-dismiss="modal" aria-label="Close" style='position: absolute;top:2rem;right:2rem;color: #ddd;font-size: 1.2rem;cursor: pointer'></i>
+            <span style='display: inline-block;font-weight: bold;font-size: 1.6rem;' ng-bind='selectedProduct.item.series'></span>
+            <span style='display: inline-block;margin-left: 1rem;font-weight: bold;font-size: 1.6rem;' ng-bind='selectedProduct.item.model'></span>
+          </div>
+          <div class="modal-body">
+                <div style='border-bottom: 1px solid #ddd;min-height:3rem;' ng-repeat='head in selectedProduct.head' ng-if='!head.title' class='clearfix'>
+                    <span style='font-size: 1.7rem;padding-left: 2rem;line-height: 3rem' ng-bind=''>{{head.key}}</span>
+                    <span style='float: right;font-size: 1.7rem;max-width:75%;padding-right: 2rem;line-height: 3rem;text-align: left;' ng-bind='selectedProduct.item[head.value]'></span>
+                </div>
+          </div>
+          <div class="modal-footer" style='border:0px'>
+<!--             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<div id="swiper-box" style="display: none;">
+    <div id="swiper-modal">
+        <i id="swiper-close" style="display: none;">X</i>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img class="swiper-slide" ng-repeat='img in selectedPicList' ng-src='{{img}}'/>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev swiper-button-white swiper-button-disabled"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
+    </div>
+</div>
+
+<!-- <input type="button" value="show" id="show"> -->
+<script src="javascripts/main_pic.js"></script>

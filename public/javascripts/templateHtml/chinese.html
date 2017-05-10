@@ -1,0 +1,286 @@
+<!DOCTYPE html >
+<html  ng-app='app'><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>一加一照明</title>
+  <link type="text/css" rel="stylesheet" href="stylesheets/astyle.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/amazeui.css">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<script type="text/javascript">
+		window.language = 'chinese'
+	</script>
+</head>
+<body ng-controller='mainCtrl'>
+	<div class="layout">
+      <div class="layout-header am-hide-sm-only">
+        <div class="topbar">
+          <div class="container">
+            <div class="am-g">
+              <div class="am-u-md-3">
+                <div class="topbar-left">
+                  <i class="am-icon-globe"></i>
+                  <div class="am-dropdown" data-am-dropdown="">
+                    <button class="am-btn am-btn-primary am-dropdown-toggle" ng-click='changeEnglish($event)'>English </button>
+  				  <!-- <span class="am-icon-caret-down"></span> -->
+                    <!-- <ul class="am-dropdown-content">
+                      <li><a href="#">English</a></li>
+                      <li class="am-divider"></li>
+                      <li><a href="#">Chinese</a></li>
+                    </ul> -->
+                  </div>
+                </div>
+              </div>
+              <div class="am-u-md-9">
+                <div class="topbar-right am-text-right am-fr">
+                  Follow us
+                  <i class="am-icon-facebook"></i>
+                  <i class="am-icon-twitter"></i>
+                  <i class="am-icon-google-plus"></i>
+                  <i class="am-icon-pinterest"></i>
+                  <i class="am-icon-instagram"></i>
+                  <i class="am-icon-linkedin"></i>
+                  <i class="am-icon-youtube-play"></i>
+                  <i class="am-icon-rss"></i>
+                  <a href="">登录</a>
+                  <a href="">注册</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="am-sticky-placeholder" style="margin: 0px; height: 170px;"><div class="header-box" data-am-sticky="" style="margin: 0px;">
+            <div class="container">
+              <div class="header">
+                <div class="am-g">
+                  <div class="am-u-lg-2 am-u-sm-12">
+                    <div class="logo">
+                      <a href=""><img src="images/logo.png" alt=""></a>
+                    </div>
+                  </div>
+                  <div class="am-u-md-10">
+                    <div class="header-right am-fr">
+                      <div class="header-contact">
+                        <div class="header_contacts--item">
+    											<div class="contact_mini">
+    												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
+    												<strong>0 (855) 233-5385</strong>
+    												<span>周一~周五, 8:00 - 20:00</span>
+    											</div>
+    										</div>
+                        <div class="header_contacts--item">
+    											<div class="contact_mini">
+    												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
+    												<strong>cn@yunshipei.com</strong>
+    												<span>随时欢迎您的来信！</span>
+    											</div>
+    										</div>
+                        <div class="header_contacts--item">
+    											<div class="contact_mini">
+    												<i style="color:#7c6aa6" class="contact-icon am-icon-map-marker"></i>
+    												<strong>天使大厦,</strong>
+    												<span>海淀区海淀大街27</span>
+    											</div>
+    										</div>
+                      </div>
+                      <a href="" class="contact-btn">
+                        <button type="button" class="am-btn am-btn-secondary am-radius">联系我们</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="nav-contain">
+            <div class="nav-inner">
+              <ul class="am-nav am-nav-pills am-nav-justify">
+                <li class=""><a href="#/index">首页</a></li>
+                <li>
+                  <a href="#product">产品中心</a>
+  <!--                 <ul class="sub-menu">
+  									<li class="menu-item"><a href="">reflector</a></li>
+  								</ul> -->
+                </li>
+                <li><a href="">解决方案</a></li>
+                <li>
+                  <a href="">新闻中心</a>
+                  <ul class="sub-menu">
+  									<li class="menu-item"><a href="">公司动态</a></li>
+  									<li class="menu-item"><a href="">行业动态</a></li>
+  									<li class="menu-item"><a href="">精彩专题</a></li>
+  								</ul>
+                </li>
+                <li><a href="">关于我们</a></li>
+                <li><a href="">加入我们</a></li>
+                <li><a href="">联系我们</a></li>
+              </ul>
+            </div>
+          </div>
+        </div></div>
+
+      </div>
+      <div class="m-header">
+        <div class="am-g am-show-sm-only">
+          <div class="am-u-sm-2">
+            <div class="menu-bars">
+              <a href="#doc-oc-demo1" data-am-offcanvas="{effect: 'push'}"><i class="am-menu-toggle-icon am-icon-bars"></i></a>
+              <nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1 am-no-layout" data-am-menu-offcanvas="">
+                <a  class="am-menu-toggle"></a>
+
+                <div class="am-offcanvas">
+                  <div class="am-offcanvas-bar">
+                    <ul class="am-menu-nav am-avg-sm-1">
+                      <li><a href="#/index" class="">首页</a></li>
+                      <li class="am-parent">
+                        <a href="#" class="">产品中心</a>
+                        <ul class="am-menu-sub am-collapse ">
+                          <li class="">
+                            <a href="" class="">产品展示1</a>
+                          </li>
+                          <li class="">
+                            <a href="" class="">产品展示2</a>
+                          </li>
+                          <li class="">
+                            <a href="" class="">产品展示3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class=""><a href="" class="">客户案例</a></li>
+                      <li class=""><a href="" class="">解决方案</a></li>
+                      <li class="am-parent">
+                        <a href="" class="">新闻中心</a>
+                        <ul class="am-menu-sub am-collapse  ">
+                          <li class="">
+                            <a href="" class="">公司动态</a>
+                          </li>
+                          <li class="">
+                            <a href="" class="">行业动态</a>
+                          </li>
+                          <li class="">
+                            <a href="" class="">精彩专题</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class=""><a href="" class="">关于我们</a></li>
+                      <li class=""><a href="" class="">加入我们</a></li>
+                      <li class=""><a href="" class="">联系我们</a></li>
+                      <li class="am-parent">
+                        <a href="" class="nav-icon nav-icon-globe">Language</a>
+                        <ul class="am-menu-sub am-collapse  ">
+                          <li>
+                            <a href="#">English</a>
+                          </li>
+                          <li class="">
+                            <a href="#">Chinese</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="nav-share-contain">
+                        <div class="nav-share-links">
+                          <i class="am-icon-facebook"></i>
+                          <i class="am-icon-twitter"></i>
+                          <i class="am-icon-google-plus"></i>
+                          <i class="am-icon-pinterest"></i>
+                          <i class="am-icon-instagram"></i>
+                          <i class="am-icon-linkedin"></i>
+                          <i class="am-icon-youtube-play"></i>
+                          <i class="am-icon-rss"></i>
+                        </div>
+                      </li>
+                      <li class=""><a href="" class="">登录</a></li>
+                      <li class=""><a href="" class="">注册</a></li>
+                    </ul>
+
+                  </div>
+                </div>
+              </nav>
+
+            </div>
+          </div>
+          <div class="am-u-sm-5 am-u-end">
+            <div class="m-logo">
+              <a href=""><img src="images/logo.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div ng-view></div> -->
+
+
+
+
+
+      <div class="layout-footer">
+        <div class="footer">
+          <div style="background-color:#383d61" class="footer--bg"></div>
+          <div class="footer--inner">
+            <div class="container">
+              <div class="footer_main">
+                <div class="am-g">
+                  <div class="am-u-md-3 ">
+                    <div class="footer_main--column">
+                      <strong class="footer_main--column_title">关于我们</strong>
+                      <div class="footer_about">
+  												<p class="footer_about--text">
+  													深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。深圳市一加一照明科技有限公司经营产品涵盖了CREE LED、透镜，西朗德反光杯，英飞特电源以及成品灯具等，销售产品种类齐全。
+  												</p>
+  												<p class="footer_about--text">
+                            一加一照明以“服务成就客户”为企业中心思想，不断的超越自己、持续追求进步，成为客户最信赖的的策略伙伴。
+  												</p>
+  											</div>
+                    </div>
+                  </div>
+
+                  <div class="am-u-md-3 ">
+                    <div class="footer_main--column">
+  										<strong class="footer_main--column_title">产品中心</strong>
+  										<ul class="footer_navigation">
+  											<li class="footer_navigation--item"><a href="#" class="footer_navigation--link">reflector</a></li>
+                        <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">led</a></li>
+                        <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">lens</a></li>
+  										</ul>
+  									</div>
+                  </div>
+
+                  <div class="am-u-md-3 ">
+                    <div class="footer_main--column">
+  										<strong class="footer_main--column_title">技术支持</strong>
+  										<ul class="footer_navigation">
+  											<li class="footer_navigation--item"><a href="#" class="footer_navigation--link">企业移动信息化白皮书</a></li>
+  											<li class="footer_navigation--item"><a href="#" class="footer_navigation--link">企业移动信息化白皮书</a></li>
+  										</ul>
+  									</div>
+                  </div>
+
+                  <div class="am-u-md-3 ">
+                    <div class="footer_main--column">
+  										<strong class="footer_main--column_title">联系详情</strong>
+  										<ul class="footer_contact_info">
+  											<li class="footer_contact_info--item"><i class="am-icon-phone"></i><span>服务专线：400 069 0309</span></li>
+  											<li class="footer_contact_info--item"><i class="am-icon-envelope-o"></i><span>yunshipei.com</span></li>
+  											<li class="footer_contact_info--item"><i class="am-icon-map-marker"></i><span>北京市海淀区海淀大街27号天使大厦（原亿景大厦）三层</span></li>
+  											<li class="footer_contact_info--item"><i class="am-icon-clock-o"></i></li>
+  										</ul>
+  									</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src='./javascripts/angular/angular.min.js'></script>
+    <script type="text/javascript" src='./javascripts/angular-route/angular-route.min.js'></script>
+    <script type="text/javascript" src='./javascripts/main.js'></script>
+    <script type="text/javascript" src='./javascripts/index.js'></script>
+    <script type="text/javascript" src='./javascripts/product.js'></script>
+    <script type="text/javascript" src='./javascripts/getProduct.js'></script>
+    <script type="text/javascript" src='./javascripts/chineseCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/englishCtrl.js'></script>
+</body>
+</html>
