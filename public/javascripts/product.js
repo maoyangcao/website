@@ -20,8 +20,8 @@ module.controller('productCtrl',['$scope','getproduct',function(scope,getproduct
 	getproduct.init('reflector',callback)
 	getproduct.init('led',callback)
 	getproduct.init('lens',callback)
+	getproduct.init('electricalSource',callback)
 	scope.changeProduct = function(tar){
-		console.log(tar)
 		scope.prarm.product = undefined
 		scope.productList = scope.productList.map(function(item){
 			item.name == tar.name ?

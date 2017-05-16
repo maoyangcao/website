@@ -49,6 +49,7 @@ module.factory('getproduct',['$http',function($http){
 	productList.reflector = new getproduct('reflector')
 	productList.led = new getproduct('led')
 	productList.lens = new getproduct('lens')
+	productList.electricalSource = new getproduct('electricalSource')
 	var products = {
 		productList:[
 			{
@@ -264,6 +265,29 @@ module.factory('getproduct',['$http',function($http){
 						]
 					}
 				]
+			},
+			{
+				name:'electricalSource',
+				active:false,
+				filtration:[
+					{
+						name:'系列',
+						en_name:'inventronicsSeries',
+						value:[
+							{value:"EBD",key:'EBD'},
+							{value:"EUG",key:'EUG'},
+							{value:"EUR",key:'EUR'}
+						]
+					},
+					{
+						name:'输入电压',
+						en_name:'inputVoltage',
+						value:[
+							{value:"90-305V",key:'90-305V'},
+							{value:"176-305V",key:'176-305V'}
+						]
+					}
+				]
 			}
 		],
 		list:{
@@ -291,6 +315,16 @@ module.factory('getproduct',['$http',function($http){
 					{key:'角度',value:'angel',noDetail:true},
 					{key:'光源型号',value:'ledPn',noDetail:true},
 					{key:'材质',value:'material'}
+				],
+				electricalSource:[
+					{key:'系列',value:'inventronicsSeries',noDetail:true},
+					{key:'输入电压',value:'inputVoltage',noDetail:true},
+					{key:'恒功率可编程',value:'rogrammableRange',noDetail:true},
+					{key:'安全认证',value:'safetyCertification',noDetail:true},
+					{key:'lpCapability',value:'lpCapability'},
+					{key:'型号',value:'pn'},
+					{key:'diming',value:'diming'},
+					{key:'尺寸',value:'size'}
 				]
 			},
 			body:{}
