@@ -64,4 +64,12 @@ router.post('/product/electricalSource/queryPage',async function (ctx, next) {
         }).web(ctx.req,ctx.res)
     })
 });
+router.post('/product/assort/queryPage',async function (ctx, next) {
+    await new Promise(function(resolve,reject){
+        var a = proxy.createProxyServer({
+          target:'http://119.23.251.217'
+          , prependPath: true
+        }).web(ctx.req,ctx.res)
+    })
+});
 module.exports = router;

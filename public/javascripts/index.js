@@ -10,19 +10,21 @@ module.controller('indexCtrl',['$scope','$http',function($scope,$http){
 		autoplay: 5000,//可选选项，自动滑动
 		pagination: '.swiper-pagination'
 	})
+
 	$http.post('/plus-admin/home/news',{langueType:1,newsCount:10}).then(function(data){
 		$scope.newsList = data.data.result
 		if($scope.$$phaes)
 			$scope.$digest()
 	})
-	$http.post('/plus-admin/newsWeb/detail',{id:4}).then(function(data){
-		console.log(data)
-		// document.body.innerHTML += data.data.result.content
+
+	$http.post('/plus-admin/home/product',{langueType:1}).then(function(data){
+		$scope.homeProductList = Object.keys(data.data.result).map(function(key){
+			data.data.result[key].pdName = key
+			return data.data.result[key]
+		});
 	})
-	$http.post('/plus-admin/newsWeb/queryPage',{langueType:1,"pageNo":1 ,"pageSize":20}).then(function(data){
-		console.log(data)
-	})
-	$http.post('/plus-admin/home/product',{langueType:1,"pageNo":1 ,"pageSize":20}).then(function(data){
+	
+	$http.post('/plus-admin/product/assort/queryPage',{langueType:1,"pageNo":1 ,"pageSize":1}).then(function(data){
 		console.log(data)
 	})
 }])

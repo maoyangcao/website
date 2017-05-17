@@ -19,191 +19,78 @@
     </div>
 </div>
 
-<div class="section">
-      <div class="container">
+<div class="section" style='display:table;width:1100px;margin:0px auto'>
+      <div class="container" style='width: 500px !important;display: table-cell;padding-right: 5rem;'>
         <div class="section--header">
-          <h2 class="section--title">一加一照明</h2>
-          <p class="section--description">
-            深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，
-            <br>一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。
-          </p>
-        </div>
+            <div style='border-bottom:1px solid #ddd;padding:1rem 0rem;'>
+                <div style="">
+                    <span class="section--title" style='display:inline-block;padding:0px; line-height: normal;'>N</span>
+                    <span style='padding:0px;font-size:25px; line-height: 1.6;'>ews/新闻动态</span>
+                    <p class='moreNews' style='text-align:right;cursor:pointer;margin:0px;'>
+                        <a href="?id=null#/news">更多新闻&nbsp;&nbsp;></a>
+                    </p>
+                </div>
 
-        <!--about-container start-->
-        <div class="about-container">
-          <div class="am-g">
-            <div class="am-u-md-6">
-              <div class="our-company-text">
-                <h3>关于一加一照明科技有限公司</h3>
-                <p>
+            </div>
+
+            <div class='newItem' style="padding:1.5rem;border-bottom:1px solid #ddd" ng-repeat='item in newsList' ng-click='showNew(item)'>
+                <div class="">
+                    <img ng-src="{{item.imageUrl}}">
+                    <div style="display:inline-block">
+                        <div style="max-width:200px;">
+                            <i class="am-icon-calendar" style='color: #59bcdb;'></i>
+                            <span style='padding-left:1rem;vertical-align: middle;'>{{item.createTime}}</span>
+                            <p style='text-align:left;margin:1rem 0rem;'>{{item.title}}</p>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="container" style='width:400px;display:table-cell;'>
+        <div class="section--header">
+            <div style="border-bottom:1px solid #ddd;padding:2rem 0rem;">
+                <span class="section--title" style='display:inline-block;padding:0px; line-height: normal;'>A</span>
+                <span style='padding:0px;font-size:25px; line-height: 1.6;'>bout/关于我们</span>
+            </div>
+            <div style="padding:1.5rem;">
+                <img src="images/img/product3.jpg" style="width:300px;float:left;padding-right:2rem;">
+                <p class="section--description" style='text-align:left'>
+                  深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。
                   深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。深圳市一加一照明科技有限公司经营产品涵盖了CREE LED、透镜，西朗德反光杯，英飞特电源以及成品灯具等，销售产品种类齐全。
                 </p>
-                <p>
-
-                </p>
-              </div>
             </div>
-
-            <div class="am-u-md-6">
-              <div class="our-company-quote">
-                <div class="am-g">
-                  <div class="am-u-md-6">
-                    <div class="our-company-img">
-                      <img src="images/img/product3.jpg" alt="">
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <!--about-container end-->
       </div>
 </div>
 
 
-    <div class="section">
+    <div class="section" style='padding-bottom: 4rem;'>
       <div class="container">
         <div class="section--header">
           <h2 class="section--title">我们的产品</h2>
           <p class="section--description">
-            产品介绍xxxxxxxxxxxxxxxxxxx
             <br>
           </p>
         </div>
 
-        <!--index-container start-->
         <div class="index-container" style='margin-top: 3rem'>
           <div class="am-g">
-            <div class="am-u-md-3">
+            <div class="am-u-md-3"  ng-repeat='item in homeProductList'>
               <div class="features_item">
-                <div style='width:262px;height:198px'>
-                  <img src="images/img/product4.jpg" style="width:100%;height:100%;display:block">
+                <div style='width:262px;height:198px;cursor:pointer' ng-click='$parent.changeProducts(item.pdName)'>
+                  <img ng-src="{{item.imgUrls}}" style="width:100%;height:100%;display:block">
                 </div>
 
-                <h3 class="features_item--title">xxxx</h3>
+                <h3 class="features_item--title">{{item.model||item.inventronicsSeries||item.pn||item.series}}</h3>
                 <p class="features_item--text">
-                  xxxxxx
+                  <!-- xxxxxx -->
                 </p>
               </div>
-            </div>
-            <div class="am-u-md-3">
-              <div class="features_item">
-                <div style='width:262px;height:198px'>
-                  <img src="images/img/product3.jpg" style="width:100%;height:100%;display:block">
-                </div>
-                <h3 class="features_item--title">xxx</h3>
-                <p class="features_item--text">
-                  xxxxxx
-                </p>
-              </div>
-            </div>
-            <div class="am-u-md-3">
-              <div class="features_item">
-                <div style='width:262px;height:198px'>
-                  <img src="images/img/product2.jpg" style="width:100%;height:100%;display:block">
-                </div>
-                <h3 class="features_item--title">xxx</h3>
-                <p class="features_item--text">
-                  xxxxxxx
-              </p></div>
-            </div>
-            <div class="am-u-md-3">
-              <div class="features_item">
-                <div style='width:262px;height:198px'>
-                  <img src="images/img/product1.jpg" style="width:100%;height:100%;display:block">
-                </div>
-                <h3 class="features_item--title">xxx</h3>
-                <p class="features_item--text">
-                  xxxxxx
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="index-more" style='margin: 3rem auto;text-align: center;'>
-            <button type="button" class="am-btn am-btn-secondary" style='border-radius: 20px;'>MORE&nbsp;&nbsp;&gt;&gt;</button>
-          </div>
-        </div>
-        <!--index-container end-->
-      </div>
-    </div>
-
-    <div class="news" ng-if='newsList.length>0'>
-        <div class="breadcrumb-box">
-          <div class="am-container" style='max-width:1200px'>
-            <ol class="am-breadcrumb">
-              <li><a href="../index.html">首页</a></li>
-              <li class="am-active">公司新闻</li>
-            </ol>
-          </div>
-        </div>
-        <div ng-repeat='item in newsList' class='newItem'>
-            <span><&nbsp;&nbsp;&nbsp;&nbsp;{{item.title}}</span>
-            <span>[&nbsp;{{item.createTime.split(' ')[0]}}&nbsp;]</span>
-            <!-- <span style='clear:both'></span> -->
-        </div>
-    </div>
-
-    <!-- 我的服务 -->
-    <!-- <div class="container">
-      <div class="section--header">
-        <h2 class="section--title" style='font-size: 50px;font-weight: 300;text-align: center;'>我们的服务</h2>
-        <p class="section--description" style='font-size: 20px;line-height: 30px;color: #9b9b9b;text-align: center;margin: 13px 0 0;'>
-         一加一照明以“服务成就客户”为企业中心思想，不断的超越自己、持续追求进步，成为客户最信赖的的策略伙伴。
-          <br>
-        </p>
-      </div>
-
-      <div class="index-container" style='margin-bottom: 4rem'>
-        <div class="am-g">
-          <div class="am-u-md-3">
-            <div class="service_item">
-              <i class="service_item--icon am-icon-diamond"></i>
-              <h3 class="service_item--title">品质</h3>
-              <div class="service_item--text">
-                <p>xxxxx</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="am-u-md-3">
-            <div class="service_item">
-              <i class="service_item--icon am-icon-user"></i>
-              <h3 class="service_item--title">服务</h3>
-              <div class="service_item--text">
-                <p>xxxxx</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="am-u-md-3">
-            <div class="service_item">
-              <i class="service_item--icon am-icon-umbrella"></i>
-              <h3 class="service_item--title">诚信</h3>
-              <div class="service_item--text">
-                <p>xxxxx</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="am-u-md-3">
-            <div class="service_item">
-              <i class="service_item--icon am-icon-briefcase"></i>
-              <h3 class="service_item--title">责任</h3>
-              <div class="service_item--text">
-                <p>xxxx</p>
-              </div>
-
             </div>
           </div>
         </div>
       </div>
-    </div> -->
-
+    </div>
   </div>

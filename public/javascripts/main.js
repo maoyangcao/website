@@ -11,6 +11,7 @@ module.controller('mainCtrl',['$scope','$http',function($scope,$http){
 			window.location.replace('home_Ch.html'+location.hash)
 	}
 	$scope.changeProducts = function(item){
+		console.log(item)
 		sessionStorage.setItem('productName',item)
 		if(window.location.hash == '#/product')
 			$scope.$broadcast('changeproduct',item)
@@ -40,5 +41,8 @@ module.config(function($routeProvider) {
 	}).when('/inside', {
         templateUrl:'javascripts/templateHtml/inside.html',
         controller:'insideCtrl'
+	}).when('/news', {
+        templateUrl:'javascripts/templateHtml/news.html',
+        controller:'newsCtrl'
 	})
 });

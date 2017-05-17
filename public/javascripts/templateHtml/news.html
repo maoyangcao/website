@@ -1,0 +1,35 @@
+<style media="screen">
+	.title_tool{width:1000px;margin:0 auto;display: block;padding: 0px;}
+	.title_tool li:first-child{margin:0px;padding: 0px;}
+	.title_tool i{padding: 0px 1rem;color:#59bcdb}
+</style>
+<div class="breadcrumb-box" style='background:#FFF;'>
+  <div class="am-container" style='width: 100%;margin:0px;max-width:none;padding:0px;'>
+    <ol class="am-breadcrumb" style='width: 100%;padding: 0 10rem;'>
+      <li style='margin: 0;'><a href="#/index" >首页</a></li>
+      <li class="am-active">新闻中心</li>
+    </ol>
+  </div>
+</div>
+<div ng-if='newsList.length==0'>
+	<div class="article">
+		<header class="article--header">
+			<h2 class="article--title" style='color: #262626;font-size: 38px;line-height: 60px;font-weight: 300;text-align:center'>{{newsDetail.title}}</h2>
+			<ul class="article--meta title_tool">
+				<li class="article--meta_item"><i class="am-icon-calendar"></i>{{newsDetail.createTime}}</li>
+				<li class="article--meta_item"><i class="am-icon-user"></i>作者：{{newsDetail.author}}</li>
+				<li class="article--meta_item"><i class="am-icon-file-text-o"></i>新闻来源：{{newsDetail.source}}</li>
+			</ul>
+		</header>
+	</div>
+	<div class='newsClass' style='width:1000px;margin:2rem auto;'>
+		<news content='content'></news>
+	</div>
+</div>
+
+<div class="news" ng-if='newsList.length>0'>
+	<div ng-repeat='item in newsList' class='newItem' ng-click='showNew(item)'>
+		<span><&nbsp;&nbsp;&nbsp;&nbsp;{{item.title}}</span>
+		<span>[&nbsp;{{item.createTime.split(' ')[0]}}&nbsp;]</span>
+	</div>
+</div>
