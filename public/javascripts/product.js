@@ -55,11 +55,14 @@ module.controller('productCtrl',['$scope','getproduct',function(scope,getproduct
 		scope.selected =data;
 		document.getElementById('product_pic').style.display = 'block'
 	}
-	scope.next = function(productName){
-		getproduct.next(productName,callback)
-	}
-	scope.before = function(productName){
-		getproduct.before(productName,callback)
+	scope.getList = function(page){
+		scope.productList.every(function(item){
+			if(item.active){
+				 getproduct.getList(item.name,page,callback)
+				 return false;
+			}
+			return true;
+		})
 	}
 	scope.showSelect = function(e,item){
 		e.stopPropagation()

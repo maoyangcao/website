@@ -2,7 +2,9 @@
 	.title_tool{width:1000px;margin:0 auto;display: block;padding: 0px;}
 	.title_tool li:first-child{margin:0px;padding: 0px;}
 	.title_tool i{padding: 0px 1rem;color:#59bcdb}
+	.newsPage{min-height: 600px;}
 </style>
+
 <div class="breadcrumb-box" style='background:#FFF;'>
   <div class="am-container" style='width: 100%;margin:0px;max-width:none;padding:0px;'>
     <ol class="am-breadcrumb" style='width: 100%;padding: 0 10rem;'>
@@ -27,9 +29,15 @@
 	</div>
 </div>
 
-<div class="news" ng-if='newsList.length>0'>
-	<div ng-repeat='item in newsList' class='newItem' ng-click='showNew(item)'>
-		<span><&nbsp;&nbsp;&nbsp;&nbsp;{{item.title}}</span>
-		<span>[&nbsp;{{item.createTime.split(' ')[0]}}&nbsp;]</span>
+<div ng-if='newsList.length>0'>
+	<div class="newsPage">
+		<div class="news">
+			<div ng-repeat='item in newsList' class='newItem' ng-click='showNew(item)'>
+				<span><&nbsp;&nbsp;&nbsp;&nbsp;{{item.title}}</span>
+				<span>[&nbsp;{{item.createTime.split(' ')[0]}}&nbsp;]</span>
+			</div>
+		</div>
 	</div>
+	<pagequery allpage='totalPage' page='page' getnews='getNews'></pagequery>
 </div>
+<!-- <ngselect><ngselect> -->

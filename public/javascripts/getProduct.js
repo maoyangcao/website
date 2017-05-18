@@ -30,13 +30,8 @@ module.factory('getproduct',['$http',function($http){
 			this.pageNo = 1;
 			this.ajax(fn)
 		}
-		this.next = function(fn){
-			this.pageNo++;
-			this.ajax(fn)
-		}
-		this.before = function(fn){
-			if(this.pageNo>1)
-				this.pageNo--;
+		this.getList = function(pageNo,fn){
+			this.pageNo = pageNo;
 			this.ajax(fn)
 		}
 		this.init = function(fn){
@@ -129,7 +124,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'系列',
 						en_name:'series',
-						for:true,
+						"for":true,
 						value:[
 							[
 								{value:"CXA1304",key:"CXA1304"},
@@ -188,7 +183,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'光源型号',
 						en_name:'ledPn',
-						for:true,
+						"for":true,
 						value:[
 							[
 								{value:"3030-LED series",key:'3030-LED series'},
@@ -332,14 +327,11 @@ module.factory('getproduct',['$http',function($http){
 	}
 
 	return {
+		getList:function(productName,pageNo,fn){
+			productList[productName].getList(pageNo,fn)
+		},
 		init:function(productName,fn){
 			productList[productName].init(fn)
-		},
-		next:function(productName,fn){
-			productList[productName].next(fn)
-		},
-		before:function(productName,fn){
-			productList[productName].before(fn)
 		},
 		select:function(productName,data,fn){
 			products.productList.forEach(function(item){
