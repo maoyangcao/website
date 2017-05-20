@@ -18,9 +18,10 @@ module.factory('getproduct',['$http',function($http){
 								item.series = item.seriesEn;
 							if(item.dimensionX&&item.dimensionY)
 								item.size = item.dimensionX+'*'+item.dimensionY
-							// if(item.ma){
-							// 	item.ma = item.ma.split('\n').join('<br/>')
-							// }
+							Object.keys(item).forEach(function(key){
+								if(item[key]&&item[key].split)
+									item[key] =  item[key].split('\n').join('<br/>')
+							})
 							return item;
 						})
 						products.productList = products.productList.map(function(item){

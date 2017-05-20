@@ -74,3 +74,18 @@ module.directive('ngHeight',function(){
 		}
 	}
 })
+
+module.directive('ngHtml',function(){
+	return{
+		restrict:"A",
+		scope:{
+			ngHtml:'='
+		},
+		link:function(scope,elem,attr){
+			scope.$watch('ngHtml',function(news){
+				if(news)
+					elem[0].innerHTML=scope.ngHtml
+			})
+		}
+	}
+})
