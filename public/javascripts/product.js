@@ -78,6 +78,7 @@ module.controller('productCtrl',['$scope','getproduct',function(scope,getproduct
 			item:item,
 			head:head
 		};
+		console.log(scope.selectedProduct.head)
 	}
 
 	scope.showpic = function(img,imgList){

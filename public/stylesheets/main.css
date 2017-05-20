@@ -2,10 +2,83 @@ html{
 	font-size: 10px;
 	height: 100%;
 }
+*{
+	    /*font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif !important;*/
+}
 body{
 	padding-bottom: 5rem !important;
 	min-height: 100%;
 	height:initial !important;
+}
+.productGroup_item{
+	padding: 0rem 1rem;
+	border:1px solid #ddd;
+	position:relative;
+/*	min-height:150px;*/
+	overflow: hidden;
+	transition: 0.3s;
+}
+.productGroup_item_title{
+	padding: 1rem 3rem;
+	position: relative;
+	border:1px solid #ddd;
+	cursor: pointer;
+}
+.productGroup_item_title .open{
+	position: absolute;
+	top:50%;
+	font-size: 16px;
+	margin-top: -8px;
+	right: 1rem;
+}
+.productGroup_item_title .close{
+	display: none
+}
+.productGroup_item_img{
+	display: block !important;
+	height:100px;
+	position:absolute;
+	right:3rem;
+	top:1rem;
+}
+.productGroup_item_img img{
+	height: 100%;
+}
+.productGroup_item >div span:last-child{
+	width:700px;
+}
+.productGroup_item >div{
+	display: table;
+	margin:0.7rem 0rem;
+}
+.productGroup_item >div span{
+	display: table-cell;
+    vertical-align: top;
+}
+.productGroup{
+	padding: 1rem 1rem;
+    cursor: pointer;
+    margin:1rem 0rem;
+    margin-bottom: 0px;
+    transition: 0.3s;
+    background:rgba(221, 221, 221, 0.6);
+    box-shadow: 0 1px 3px rgba(137, 23, 230, 0.3);
+}
+.productGroup:hover{
+	 background: #DDD;
+}
+.productGroup:hover p{
+	border-left:8px solid rgba(58, 142, 179, 0.61);
+	letter-spacing: 1px;
+}
+.productGroup p{
+	transition: 0.2s;
+	height: 3rem;
+    margin: 0px;
+    padding: 0rem 2rem;
+    line-height: 3rem;
+    border-left: 5px solid #3a8eb3;
+    letter-spacing: 0px;
 }
 .news_footer{
 	padding: 1rem 5rem;
@@ -52,7 +125,7 @@ body{
 }
 .news >div{
 	width:100%;
-	padding: 0.6rem 10rem;
+	padding: 0.4rem 14rem;
 	line-height: 0;
 	border-bottom: 1px solid #ddd;
 }
@@ -230,4 +303,31 @@ body{
 .main_am-g >div:last-child{
 	display: inline-block;
 	float:none !important;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

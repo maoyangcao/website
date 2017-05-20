@@ -51,3 +51,26 @@ module.directive('pagequery',function(){
 		 }
 	}
 })
+
+
+module.directive('ngHeight',function(){
+	return{
+		restrict:"A",
+		scope:{
+			ngHeight:'='
+		},
+		link:function(scope,elem,attr){
+			var height = elem[0].clientHeight;
+			scope.$watch('ngHeight',function(news){
+				if(news)
+					if(height<150)
+						elem[0].style.height ='150px'
+					else
+						elem[0].style.height = height+50+'px'
+				else
+						elem[0].style.height ='0px'
+			})
+			console.log(height)
+		}
+	}
+})

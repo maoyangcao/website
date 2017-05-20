@@ -44,5 +44,8 @@ module.config(function($routeProvider) {
 	}).when('/news', {
         templateUrl:'javascripts/templateHtml/news.html',
         controller:'newsCtrl'
+	}).when('/productGroup', {
+        templateUrl:'javascripts/templateHtml/productGroup.html',
+        controller:'productGroupCtrl'
 	})
 });

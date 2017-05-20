@@ -3,14 +3,24 @@ module.factory('getproduct',['$http',function($http){
 	function getproduct(url){
 		this.productName = url;
 		this.url = '/plus-admin/product/'+url+'/queryPage';
+		this.langueType = 1;
 		this.ajax = function(fn){
-			$http.post(this.url,this).success(function(data){
+			var ajaxData = JSON.parse(JSON.stringify(this))
+			if(ajaxData.seriesEn){
+				ajaxData.series = ajaxData.seriesEn
+				ajaxData.seriesEn = undefined;
+			}
+			$http.post(this.url,ajaxData).success(function(data){
 				if(data.success&&data.result){
 					if(data.result.itemList.length>0){
 						data.result.itemList = data.result.itemList.map(function(item){
 							if(window.language == 'english'&&item.seriesEn)
 								item.series = item.seriesEn;
-							item.size = item.dimensionX+'*'+item.dimensionY
+							if(item.dimensionX&&item.dimensionY)
+								item.size = item.dimensionX+'*'+item.dimensionY
+							// if(item.ma){
+							// 	item.ma = item.ma.split('\n').join('<br/>')
+							// }
 							return item;
 						})
 						products.productList = products.productList.map(function(item){
@@ -317,9 +327,10 @@ module.factory('getproduct',['$http',function($http){
 					{key:'恒功率可编程',value:'rogrammableRange',noDetail:true},
 					{key:'安全认证',value:'safetyCertification',noDetail:true},
 					{key:'lpCapability',value:'lpCapability'},
+					{key:'调光',value:'diming'},
 					{key:'型号',value:'pn'},
-					{key:'diming',value:'diming'},
-					{key:'尺寸',value:'size'}
+					{key:'尺寸',value:'size'},
+					{key:'输出电流范围',value:'ma'}
 				]
 			},
 			body:{}

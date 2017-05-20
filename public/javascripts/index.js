@@ -23,8 +23,8 @@ module.controller('indexCtrl',['$scope','$http',function($scope,$http){
 			return data.data.result[key]
 		});
 	})
-	
-	$http.post('/plus-admin/product/assort/queryPage',{langueType:1,"pageNo":1 ,"pageSize":1}).then(function(data){
-		console.log(data)
-	})
+
+	$scope.showNew = function(item){
+		window.location.href='?id='+item.id+'#/news'
+	}
 }])
