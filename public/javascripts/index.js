@@ -11,13 +11,13 @@ module.controller('indexCtrl',['$scope','$http',function($scope,$http){
 		pagination: '.swiper-pagination'
 	})
 
-	$http.post('/plus-admin/home/news',{langueType:1,newsCount:10}).then(function(data){
+	$http.post('/plus-admin/home/news',{langueType:langueType,newsCount:10}).then(function(data){
 		$scope.newsList = data.data.result
 		if($scope.$$phaes)
 			$scope.$digest()
 	})
 
-	$http.post('/plus-admin/home/product',{langueType:1}).then(function(data){
+	$http.post('/plus-admin/home/product',{langueType:langueType}).then(function(data){
 		$scope.homeProductList = Object.keys(data.data.result).map(function(key){
 			data.data.result[key].pdName = key
 			return data.data.result[key]

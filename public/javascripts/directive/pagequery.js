@@ -7,11 +7,11 @@ module.directive('pagequery',function(){
 			getnews:'&'
 		},
 		template:'<div class="pagequery">'
-					+'<span ng-click="first()">首页</span>'
-					+'<span ng-click="pre()">上一页</span>'
+					+'<span ng-click="first()" ng-en="first page">首页</span>'
+					+'<span ng-click="pre()" ng-en="previous page">上一页</span>'
 					+'<span ng-repeat="num in pageList" ng-bind="num" ng-click="changePage(num)" ng-class={"true":"pagequery_select"}[num==page] ng-if="page-num ==1 || page-num == 0 ||page-num ==-1 "></span>'
-					+'<span ng-click="next()">下一页</span>'
-					+'<span ng-click="last()">尾页</span>'
+					+'<span ng-click="next()" ng-en="next page">下一页</span>'
+					+'<span ng-click="last()"ng-en="trailer page">尾页</span>'
 				 +'</div>'
 				 +'<style>'
 				 +'.pagequery{text-align:center;padding:1rem;margin:1rem;}'
@@ -70,7 +70,6 @@ module.directive('ngHeight',function(){
 				else
 						elem[0].style.height ='0px'
 			})
-			console.log(height)
 		}
 	}
 })
@@ -85,6 +84,23 @@ module.directive('ngHtml',function(){
 			scope.$watch('ngHtml',function(news){
 				if(news)
 					elem[0].innerHTML=scope.ngHtml
+			})
+		}
+	}
+})
+
+module.directive('ngEn',function(){
+	return{
+		restrict:"A",
+		scope:{
+			ngEn:'@'
+		},
+		link:function(scope,elem,attr){
+			if(window.language != 'chinese')
+				elem[0].innerHTML = scope.ngEn
+			scope.$watch('ngEn',function(news){
+				if(window.language != 'chinese')
+					elem[0].innerHTML = scope.ngEn
 			})
 		}
 	}

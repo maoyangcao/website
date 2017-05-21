@@ -73,12 +73,10 @@ module.controller('productCtrl',['$scope','getproduct',function(scope,getproduct
 			document.getElementById(item.name).style.height = '0px';
 	}
 	scope.showDetail = function(head,item){
-		console.log(head,item)
 		scope.selectedProduct = {
 			item:item,
 			head:head
 		};
-		console.log(scope.selectedProduct.head)
 	}
 
 	scope.showpic = function(img,imgList){

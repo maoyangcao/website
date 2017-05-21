@@ -17,18 +17,23 @@ module.controller('newsCtrl',['$scope','$http',function($scope,$http){
 	$scope.newsList =[]
 	$scope.page= 1;
 	$scope.getNews = function(page){
-		$http.post('/plus-admin/newsWeb/queryPage',{langueType:1,"pageNo":page,"pageSize":10}).then(function(data){
+		$http.post('/plus-admin/newsWeb/queryPage',{langueType:langueType,"pageNo":page,"pageSize":10}).then(function(data){
 			$scope.newsList = data.data.result.itemList
 			$scope.totalPage = data.data.result.totalPage;
 			if($scope.$$phaes)
 				$scope.$digest()
 		})
 	}
-	if(location.search.split('=')[1]!='null'){
+	if(location.search.split('=')[1]&&location.search.split('=')[1]!='null'){
 		var id = location.search.split('=')[1]
 		$http.post('/plus-admin/newsWeb/detail',{id:id}).then(function(data){
-			 $scope.content = data.data.result.content
-			 $scope.newsDetail = data.data.result;
+			if(data.data.result&& data.data.result.content){
+			 	$scope.content = data.data.result.content
+			 	$scope.newsDetail = data.data.result;
+			}
+			else{
+				$scope.content = null;
+			}
 		})
 	}
 	else

@@ -14,6 +14,14 @@ module.controller('productGroupCtrl',['$scope','$http',function($scope,$http){
 	}
 	$scope.getNews = function(page){
 		$http.post('/plus-admin/product/assort/queryPage',{langueType:1,"pageNo":page ,"pageSize":1}).then(function(data){
+			if(data.data.result&&data.data.result.itemList)
+				Object.keys(data.data.result.itemList[0]).forEach(function(key){
+					data.data.result.itemList[0][key] = data.data.result.itemList[0][key].map(function(item){
+						if(item.series&&window.language != "chinese")
+							item.series = item.seriesEn || item.series;
+						return item;
+					})
+				})
 			$scope.productGroupList = data.data.result.itemList[0]
 			$scope.totalPage = data.data.result.totalPage;
 		})

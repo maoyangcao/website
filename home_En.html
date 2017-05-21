@@ -3,12 +3,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <title>一加一照明</title>
-  <link type="text/css" rel="stylesheet" href="stylesheets/astyle.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="stylesheets/astyle.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/amazeui.css">
     <link rel="stylesheet" href="stylesheets/common.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/swiper.min.css">
+    <link rel="stylesheet" href="stylesheets/font/css/font-awesome.min.css">
 	<script type="text/javascript">
 		window.language = 'english'
 	</script>
@@ -39,186 +40,48 @@
 	              <li class=""><a href="#/index">home page</a></li>
 	              <li>
 	                <a href="#product">product center</a>
-	<!--                 <ul class="sub-menu">
-										<li class="menu-item"><a href="">reflector</a></li>
-									</ul> -->
+		                <ul class="sub-menu">
+							<li class="menu-item" style='cursor: pointer' ng-click='changeProducts("led")'><a>led</a></li>
+							<li class="menu-item" style='cursor: pointer' ng-click='changeProducts("reflector")'><a>reflector</a></li>
+							<li class="menu-item" style='cursor: pointer' ng-click='changeProducts("lens")'><a >lens</a></li>
+                            <li class="menu-item" style='cursor: pointer' ng-click='changeProducts("electricalSource")'><a >electricalSource</a></li>
+						</ul>
 	              </li>
-	              <li><a href="">solution</a></li>
+	              <li><a  href="#/productGroup">accessory project</a></li>
 	              <li>
-	                <a href="">news center</a>
-	              <ul class="sub-menu">
-					  <li class="menu-item"><a href="">Company Dynamic</a></li>
-					  <li class="menu-item"><a href="">industry trends</a></li>
-				  </ul>
+	                <a href="?id=null#/news">news center</a>
 	              </li>
-	              <li><a href="">About Us</a></li>
-	              <li><a href="">Join us</a></li>
-	              <li><a href="">contact us</a></li>
+	              <li><a href="#/about">About Us</a></li>
+	              <li><a href="#/contact">contact us</a></li>
 	            </ul>
 	          </div>
 	        </div>
 	      </div></div>
 
 	    </div>
-	    <div class="m-header">
-	      <div class="am-g am-show-sm-only">
-	        <div class="am-u-sm-2">
-	          <div class="menu-bars">
-	            <a href="#doc-oc-demo1" data-am-offcanvas="{effect: 'push'}"><i class="am-menu-toggle-icon am-icon-bars"></i></a>
-	            <nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1 am-no-layout" data-am-menu-offcanvas="">
-	              <a  class="am-menu-toggle"></a>
-
-	              <div class="am-offcanvas">
-	                <div class="am-offcanvas-bar">
-	                  <ul class="am-menu-nav am-avg-sm-1">
-	                    <li><a href="#/index" class="">首页</a></li>
-	                    <li class="am-parent">
-	                      <a href="#" class="">产品中心</a>
-	                      <ul class="am-menu-sub am-collapse ">
-	                        <li class="">
-	                          <a href="" class="">产品展示1</a>
-	                        </li>
-	                        <li class="">
-	                          <a href="" class="">产品展示2</a>
-	                        </li>
-	                        <li class="">
-	                          <a href="" class="">产品展示3</a>
-	                        </li>
-	                      </ul>
-	                    </li>
-	                    <li class=""><a href="" class="">客户案例</a></li>
-	                    <li class=""><a href="" class="">解决方案</a></li>
-	                    <li class="am-parent">
-	                      <a href="" class="">新闻中心</a>
-	                      <ul class="am-menu-sub am-collapse  ">
-	                        <li class="">
-	                          <a href="" class="">公司动态</a>
-	                        </li>
-	                        <li class="">
-	                          <a href="" class="">行业动态</a>
-	                        </li>
-	                        <li class="">
-	                          <a href="" class="">精彩专题</a>
-	                        </li>
-	                      </ul>
-	                    </li>
-	                    <li class=""><a href="" class="">关于我们</a></li>
-	                    <li class=""><a href="" class="">加入我们</a></li>
-	                    <li class=""><a href="" class="">联系我们</a></li>
-	                    <li class="am-parent">
-	                      <a href="" class="nav-icon nav-icon-globe">Language</a>
-	                      <ul class="am-menu-sub am-collapse  ">
-	                        <li>
-	                          <a href="#">English</a>
-	                        </li>
-	                        <li class="">
-	                          <a href="#">Chinese</a>
-	                        </li>
-	                      </ul>
-	                    </li>
-	                    <li class="nav-share-contain">
-	                      <div class="nav-share-links">
-	                        <i class="am-icon-facebook"></i>
-	                        <i class="am-icon-twitter"></i>
-	                        <i class="am-icon-google-plus"></i>
-	                        <i class="am-icon-pinterest"></i>
-	                        <i class="am-icon-instagram"></i>
-	                        <i class="am-icon-linkedin"></i>
-	                        <i class="am-icon-youtube-play"></i>
-	                        <i class="am-icon-rss"></i>
-	                      </div>
-	                    </li>
-	                    <li class=""><a href="" class="">登录</a></li>
-	                    <li class=""><a href="" class="">注册</a></li>
-	                  </ul>
-
-	                </div>
-	              </div>
-	            </nav>
-
-	          </div>
-	        </div>
-	        <div class="am-u-sm-5 am-u-end">
-	          <div class="m-logo">
-	            <a href=""><img src="images/logo.png" alt=""></a>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
 
 	    <div ng-view></div>
 
 
-
-
-
-	    <div class="layout-footer">
-	      <div class="footer">
-	        <div style="background-color:#383d61" class="footer--bg"></div>
-	        <div class="footer--inner">
-	          <div class="container main_container">
-	            <div class="footer_main ">
-	              <div class="am-g main_am-g">
-	                <div class="am-u-md-3 ">
-	                  <div class="footer_main--column">
-	                    <strong class="footer_main--column_title">About us</strong>
-	                    <div class="footer_about">
-													<p class="footer_about--text">
-														Shenzhen one plus  lighting  technology co,ltd is a integrated lighting solution provider.It is located in shenzhen city, guangdong provice.With more than 10 years experience in the lighting field Shenzhen one plus  lighting  technology co,ltd has been dedicated to offering a comprehensive range of components and design solution to fulfill diverse demand from customers in various product applications. our product brands covers CREE LED,shiland reflecter ,lens, Inventronics voltage source.
-													</p>
-													<p class="footer_about--text">
-														"Service contribute to customer”is the core value of One plus，we have uninterruptedly surpasses ourselves and continuously pursues progress ,to be the best and the most reliable strategic partner of customers.
-													</p>
-												</div>
-	                  </div>
-	                </div>
-
-	                <div class="am-u-md-3 ">
-	                  <div class="footer_main--column">
-											<strong class="footer_main--column_title">Products center</strong>
-											<ul class="footer_navigation">
-													<li class="footer_navigation--item"><a href="javascript:location.hash='/product';location.search='product=reflector'" class="footer_navigation--link">reflector</a></li>
-							                      <li class="footer_navigation--item"><a href="javascript:location.hash='/product';location.search='product=led'" class="footer_navigation--link">led</a></li>
-							                      <li class="footer_navigation--item"><a href="javascript:location.hash='/product';ocation.search='product=lens'" class="footer_navigation--link">lens</a></li>
-											</ul>
-										</div>
-	                </div>
-
-	                <div class="am-u-md-3 ">
-	                  <div class="footer_main--column">
-											<strong class="footer_main--column_title">technical support</strong>
-											<ul class="footer_navigation">
-												<li class="footer_navigation--item"><a href="#" class="footer_navigation--link">one</a></li>
-											</ul>
-										</div>
-	                </div>
-
-	                <div class="am-u-md-3 ">
-	                  <div class="footer_main--column">
-											<strong class="footer_main--column_title">Contact details</strong>
-											<ul class="footer_contact_info">
-												<li class="footer_contact_info--item"><i class="am-icon-phone"></i><span>phone：400 069 0309</span></li>
-												<li class="footer_contact_info--item"><i class="am-icon-envelope-o"></i><span>yunshipei.com</span></li>
-												<li class="footer_contact_info--item"><i class="am-icon-map-marker"></i><span>Beijing haidian district, haidian street 27 angel building three layer</span></li>
-												<li class="footer_contact_info--item"><i class="am-icon-clock-o"></i></li>
-											</ul>
-										</div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
+	    <div style='position:absolute;left:0px;bottom:0px;text-align: center;height:5rem;line-height:5rem;width:100%;background: rgba(0, 0, 0, 0.95);;color: #968d8d'>Copyright  xxxxxxxx,All Rights Reserved. 
 	    </div>
+
 	  </div>
-	<script type="text/javascript" src='./javascripts/swiper.min.js'></script>
+    <script type="text/javascript" src='./javascripts/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript" src='./stylesheets/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script type="text/javascript" src='./javascripts/swiper.min.js'></script>
     <script type="text/javascript" src='./javascripts/angular/angular.min.js'></script>
     <script type="text/javascript" src='./javascripts/angular-route/angular-route.min.js'></script>
     <script type="text/javascript" src='./javascripts/main.js'></script>
     <script type="text/javascript" src='./javascripts/index.js'></script>
     <script type="text/javascript" src='./javascripts/product.js'></script>
     <script type="text/javascript" src='./javascripts/getProduct.js'></script>
-    <script type="text/javascript" src='./javascripts/chineseCtrl.js'></script>
-    <script type="text/javascript" src='./javascripts/englishCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/aboutCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/contactCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/insideCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/newsCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/productGroupCtrl.js'></script>
+    <script type="text/javascript" src='./javascripts/directive/pagequery.js'></script>
+    <script type="text/javascript" src='./javascripts/directive/select.js'></script>
 </body>
 </html>

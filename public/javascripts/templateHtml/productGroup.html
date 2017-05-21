@@ -1,4 +1,4 @@
-<div class="breadcrumb-box">
+<div class="breadcrumb-box" ng-if='$parent.language == "chinese"'>
         <div class="am-container">
           <ol class="am-breadcrumb">
             <li><a href="#/index">首页</a></li>
@@ -6,11 +6,19 @@
           </ol>
         </div>
 </div>
+<div class="breadcrumb-box" ng-if='$parent.language != "chinese"'>
+        <div class="am-container">
+          <ol class="am-breadcrumb">
+            <li><a href="#/index">home page</a></li>
+            <li class="am-active">accessory project</li>
+          </ol>
+        </div>
+</div>
 <div style='padding:3rem 15rem '>
 	<!-- <p style='padding-top: 3rem;'>配套方案</p> -->
 	<div>
 		<div class='productGroup' ng-click='showGroups("led")'>
-			<p>led配套方案</p>
+			<p ng-en='led accessory project'>led配套方案</p>
 		</div>
 		<div ng-repeat ='led in productGroupList.ledList' ng-show='productGroupList.led' >
 			<div class='productGroup_item_title' ng-click='openDetail(led)'>
@@ -23,23 +31,23 @@
 					<img ng-src="{{led.imgUrlList[0]}}">
 				</div>
 				<div>
-					<span>系列:</span><span ng-bind='led.series'></span>
+					<span ng-en='series：'>系列:</span><span ng-bind='led.series'></span>
 				</div>
 				<div>
-					<span>型号:</span><span ng-bind='led.brand'></span>
+					<span ng-en='brand：'>型号:</span><span ng-bind='led.brand'></span>
 				</div>
 				<div>
-					<span>参数:</span><span ng-bind='led.parameter'></span>
+					<span ng-en='parameter：'>参数:</span><span ng-bind='led.parameter'></span>
 				</div>
 				<div ng-if='led.accessoryUrl'>
-					<span>附件:</span><span><a href="{{led.accessoryUrl}}" target="_blank">点击下载</a></span>
+					<span ng-en='accessory：'>附件:</span><span><a href="{{led.accessoryUrl}}" target="_blank" ng-en='click to download'>点击下载</a></span>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div>
 		<div class='productGroup' ng-click='showGroups("lens")'>
-			<p>lens配套方案</p>
+			<p ng-en='lens accessory project'>lens配套方案</p>
 		</div>
 		<div ng-repeat ='lens in productGroupList.lensList' ng-show='productGroupList.lens'>
 			<div class='productGroup_item_title' ng-click='openDetail(lens)'>
@@ -52,32 +60,32 @@
 					<img ng-src="{{lens.imgUrlList[0]}}">
 				</div>
 				<div>
-					<span>角度:</span><span ng-bind='lens.angel'></span>
+					<span ng-en='angel：'>角度:</span><span ng-bind='lens.angel'></span>
 				</div>
 				<div>
-					<span>直径/长:</span><span ng-bind='lens.dimensionX'></span>
+					<span ng-en='dimensionX：'>直径/长:</span><span ng-bind='lens.dimensionX'></span>
 				</div>
 				<div>
-					<span>厚/宽:</span><span ng-bind='lens.dimensionY'></span>
+					<span ng-en='dimensionY：'>厚/宽:</span><span ng-bind='lens.dimensionY'></span>
 				</div>
 				<div>
-					<span>led型号:</span><span ng-bind='lens.ledPn'></span>
+					<span ng-en='ledPn：'>led型号:</span><span ng-bind='lens.ledPn'></span>
 				</div>
 				<div>
-					<span>底径/高:</span><span ng-bind='lens.dimensionZ'></span>
+					<span ng-en='dimensionZ：'>底径/高:</span><span ng-bind='lens.dimensionZ'></span>
 				</div>
 				<div>
-					<span>材料:</span><span ng-bind='lens.material'></span>
+					<span ng-en='material：'>材料:</span><span ng-bind='lens.material'></span>
 				</div>
 				<div ng-if='lens.accessoryUrl'>
-					<span>附件:</span><span><a href="{{lens.accessoryUrl}}" target="_blank">点击下载</a></span>
+					<span ng-en='accessory：'>附件:</span><span><a href="{{lens.accessoryUrl}}" target="_blank" ng-en='click to download'>点击下载</a></span>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div>
 		<div class='productGroup' ng-click='showGroups("reflector")'>
-			<p>reflector配套方案</p>
+			<p ng-en='reflector accessory project'>reflector配套方案</p>
 		</div>
 		<div ng-repeat ='reflector in productGroupList.reflectorList' ng-show='productGroupList.reflector'>
 			<div class='productGroup_item_title' ng-click='openDetail(reflector)'>
@@ -90,34 +98,34 @@
 					<img ng-src="{{reflector.imgUrlList[0]}}">
 				</div>
 				<div>
-					<span>系列:</span><span ng-bind='reflector.series'></span>
+					<span ng-en='series：'>系列:</span><span ng-bind='reflector.series'></span>
 				</div>
 				<div>
-					<span>型号:</span><span ng-bind='reflector.model'></span>
+					<span ng-en='model：'>型号:</span><span ng-bind='reflector.model'></span>
 				</div>
 				<div>
-					<span>半光强角度:</span><span ng-bind='reflector.fwhm'></span>
+					<span ng-en='fwhm：'>半光强角度:</span><span ng-bind='reflector.fwhm'></span>
 				</div>
 				<div>
-					<span>直径:</span><span ng-bind='reflector.diameter'></span>
+					<span ng-en='diameter：'>直径:</span><span ng-bind='reflector.diameter'></span>
 				</div>
 				<div>
-					<span>高度:</span><span ng-bind='reflector.height'></span>
+					<span ng-en='height：'>高度:</span><span ng-bind='reflector.height'></span>
 				</div>
 				<div>
-					<span>底径:</span><span ng-bind='reflector.bottomDiameter'></span>
+					<span ng-en='bottomDiameter：'>底径:</span><span ng-bind='reflector.bottomDiameter'></span>
 				</div>
 				<div>
-					<span>材质:</span><span ng-bind='reflector.material'></span>
+					<span ng-en='material：'>材质:</span><span ng-bind='reflector.material'></span>
 				</div>
 				<div>
-					<span>标准效率:</span><span ng-bind='reflector.eff'></span>
+					<span ng-en='eff：'>标准效率:</span><span ng-bind='reflector.eff'></span>
 				</div>
 				<div>
-					<span>配套LED:</span><span ng-bind='reflector.matchLed'></span>
+					<span ng-en='matchLed：'>配套LED:</span><span ng-bind='reflector.matchLed'></span>
 				</div>
 				<div ng-if='reflector.accessoryUrl'>
-					<span>附件:</span><span><a href="{{reflector.accessoryUrl}}" target="_blank">点击下载</a></span>
+					<span ng-en='accessoryUrl'>附件:</span><span><a href="{{reflector.accessoryUrl}}" target="_blank" ng-en='click to download'>点击下载</a></span>
 				</div>
 			</div>
 		</div>

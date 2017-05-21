@@ -3,7 +3,11 @@ module.controller('mainCtrl',['$scope','$http',function($scope,$http){
 	if(location.hash == '/' || location.hash == '')
 		location.replace('#/index')
 	window.$scope = $scope
-	$scope.language = window.language
+	$scope.language = window.language;
+	if($scope.language == 'chinese')
+		window.langueType = 1;
+	else
+		window.langueType = 2;
 	$scope.changeLanguage = function(e){
 		if($scope.language == 'chinese')
 			window.location.replace('home_En.html'+location.hash)
@@ -11,7 +15,6 @@ module.controller('mainCtrl',['$scope','$http',function($scope,$http){
 			window.location.replace('home_Ch.html'+location.hash)
 	}
 	$scope.changeProducts = function(item){
-		console.log(item)
 		sessionStorage.setItem('productName',item)
 		if(window.location.hash == '#/product')
 			$scope.$broadcast('changeproduct',item)

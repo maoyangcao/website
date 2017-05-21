@@ -10,6 +10,8 @@ module.factory('getproduct',['$http',function($http){
 				ajaxData.series = ajaxData.seriesEn
 				ajaxData.seriesEn = undefined;
 			}
+			if(window.language != 'chinese')
+				ajaxData.langueType = 2;
 			$http.post(this.url,ajaxData).success(function(data){
 				if(data.success&&data.result){
 					if(data.result.itemList.length>0){

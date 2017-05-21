@@ -6,10 +6,7 @@
               <img src="images/img/index1.jpg" style='width:100%;height:100%;display: block'>
             </div>
             <div class="swiper-slide">
-              <img src="images/img/index2.jpg" style='width:100%;height:100%;display: block'>
-            </div>
-              <div class="swiper-slide">
-              <img src="images/img/index4.jpg" style='width:100%;height:100%;display: block'>
+              <img src="images/img/index8.jpg" style='width:100%;height:100%;display: block'>
             </div>
         </div>
         <!-- 如果需要分页器 -->
@@ -26,8 +23,11 @@
                 <div style="">
                     <span class="section--title" style='display:inline-block;padding:0px; line-height: normal;'>N</span>
                     <span style='padding:0px;font-size:25px; line-height: 1.6;'>ews/新闻动态</span>
-                    <p class='moreNews' style='text-align:right;cursor:pointer;margin:0px;'>
+                    <p class='moreNews' style='text-align:right;cursor:pointer;margin:0px;' ng-if='$parent.language == "chinese"'>
                         <a href="?id=null#/news">更多新闻&nbsp;&nbsp;></a>
+                    </p>
+                    <p class='moreNews' style='text-align:right;cursor:pointer;margin:0px;' ng-if='$parent.language == "english"'>
+                        <a href="?id=null#/news">more news&nbsp;&nbsp;></a>
                     </p>
                 </div>
 
@@ -56,9 +56,13 @@
             </div>
             <div style="padding:1.5rem;">
                 <img src="images/img/product3.jpg" style="width:300px;float:left;padding-right:2rem;">
-                <p class="section--description" style='text-align:left'>
+                <p class="section--description" style='text-align:left;font-size: 17px'  ng-if='$parent.language == "chinese"'>
                   深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。
                   深圳市一加一照明科技有限公司是一家LED灯具一体化方案商，位于广东省深圳市。公司在行业内有超过10年的耕耘经验，一直致力于为LED照明应用提供优质的零配件及最佳设计方案方案。深圳市一加一照明科技有限公司经营产品涵盖了CREE LED、透镜，西朗德反光杯，英飞特电源以及成品灯具等，销售产品种类齐全。
+                </p>
+                  <p class="section--description" style='text-align:left;font-size: 17px'  ng-if='$parent.language != "chinese"'>
+                    Shenzhen one plus lighting technology co,ltd is a integrated lighting solution provider.It is located in shenzhen city, guangdong provice.With more than 10 years experience in the lighting field Shenzhen one plus lighting technology co,ltd has been dedicated to offering a comprehensive range of components and design solution to fulfill diverse demand from customers in various product applications. our product brands covers CREE LED,shiland reflecter ,lens, Inventronics voltage source.
+                    "Service contribute to customer”is the core value of One plus，we have uninterruptedly surpasses ourselves and continuously pursues progress ,to be the best and the most reliable strategic partner of customers.
                 </p>
             </div>
         </div>
@@ -69,7 +73,8 @@
     <div class="section" style='padding-bottom: 4rem;'>
       <div class="container">
         <div class="section--header">
-          <h2 class="section--title">我们的产品</h2>
+          <h2 class="section--title" ng-if='$parent.language == "chinese"'>我们的产品</h2>
+          <h2 class="section--title" ng-if='$parent.language != "chinese"'>our products</h2>
           <p class="section--description">
             <br>
           </p>
