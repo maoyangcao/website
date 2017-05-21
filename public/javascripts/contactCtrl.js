@@ -6,7 +6,7 @@ module.controller('contactCtrl',['$scope',function($scope){
 			window.location.replace('home_Ch.html'+location.hash)
 	}
 	setTimeout(function(){
-		    var latlng = new google.maps.LatLng(22.5521107, 113.9561058);  
+		    var latlng = new google.maps.LatLng(22.584563, 113.947256);  
    
 		    var mapOptions = {  
 		        zoom: 16, //初始放大倍數  
