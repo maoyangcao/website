@@ -3,12 +3,69 @@
 <div class="breadcrumb-box" style='background: #FFF'>
         <div class="am-container">
           <ol class="am-breadcrumb">
-            <li><a href="#/index">首页</a></li>
-            <li class="am-active">产品中心</li>
+            <li><a href="#/index" ng-en='home page'>首页</a></li>
+            <li class="am-active" ng-en='product center'>产品中心</li>
           </ol>
         </div>
 </div>
-<div id='product' >
+<div class="container" style='width:1525px !important;padding:4rem 0rem;'>
+				<div class="am-u-md-3">
+					<div class="am-panel am-panel-default">
+					  <div class="am-panel-hd" ng-en='product filtration'>产品查询</div>
+					  <div class="am-panel-bd">
+						<form class="am-form">
+						<fieldset ng-repeat='product in productList' ng-if='product.active'>
+                            <div ng-repeat='item in product.filtration'>
+                                <label for="doc-select-1" ng-bind='item.name' ng-en='{{item.en_name}}'></label>
+                                <select style="width:100%;" ng-model='productPrarm[item.en_name]'>
+                                    <option value="" ng-en='all'>全部</option>
+                                    <option value='{{value.value}}' ng-repeat='value in item.value' ng-en='{{value.en_key||value.key}}'ng-bind='value.key'></option>
+                                </select>
+                                <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
+                            </div>
+                            <div style="text-align: center;padding-bottom: 25px;">
+                              <button type="button" class="am-btn am-btn-primary am-radius" ng-click='reload(product.name,productPrarm)' ng-en='search'>查询</button>
+                              <button type="button" class="am-btn am-btn-default am-radius" ng-click='reset(product.name)' ng-en='reset'>重置</button>
+                            </div>
+						 </fieldset>
+						</form>
+					  </div>
+
+					</div>
+				</div>
+
+				<div class="am-u-md-9">
+
+					<div class="am-panel am-panel-default">
+					  <div>
+                          <div class="productList" ng-repeat='product in productList' ng-if='product.active'>
+                              <div class="am-panel-hd" style='color: #444;background-color: #f5f5f5;border-color: #ddd;' ng-bind='product.ch_name' ng-en='{{product.name}}' ></div>
+                              <div class="products_cell">
+                                  <div class="products" ng-repeat='items in list.body[product.name]' ng-click='showDetail(list.head[product.name],items)'>
+                                      <div style='margin:2px;position: relative;'>
+                                          <img ng-src='{{items.imgUrls}}' style='border-radius: 4px;margin: 0 auto;padding:1.5rem 0rem;'></img>
+                                      </div>
+                                      <div class="products_detail">
+                                          <div ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
+                                              <span ng-if='$parent.language=="chinese"' ng-bind='item.key'></span>
+                                              <span ng-if='$parent.language=="english"' ng-bind='item.value'></span>
+                                              <span ng-bind='items[item.value]'></span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                              <div ng-if="list.body[product.name].length>0">
+                                  <pagequery allpage='product.totalPage' page='product.pageNo' getnews='getList'></pagequery>
+                              </div>
+                              <p ng-if="list.body[product.name].length==0" ng-en='There is no such product' style='text-align:center;margin-top:4rem;font-weight:bold;letter-spacing:1px'>没有此类型产品</p>
+                          </div>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+<!-- <div id='product' >
     <div class="example-container">
         <div class="am-tabs" data-am-tabs="" style='background: #FFF'>
             <div style='padding: 1rem 0px'>
@@ -68,7 +125,7 @@
             </div>
             <p style='text-align:center;margin-top:4rem' ng-if="list.body[product.name].length==0">没有此类型产品</p>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -86,29 +143,10 @@
                 </div>
           </div>
           <div class="modal-footer" style='border:0px'>
-<!--             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
     </div>
-
 </div>
 
-
-<div id="swiper-box" style="display: none;">
-    <div id="swiper-modal">
-        <i id="swiper-close" style="display: none;">X</i>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <img class="swiper-slide" ng-repeat='img in selectedPicList' ng-src='{{img}}'/>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev swiper-button-white swiper-button-disabled"></div>
-            <div class="swiper-button-next swiper-button-white"></div>
-        </div>
-    </div>
-</div>
-
-<!-- <input type="button" value="show" id="show"> -->
-<script src="javascripts/main_pic.js"></script>
+<i data-toggle="modal" data-target="#myModal" id='toogle'></i>

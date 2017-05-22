@@ -63,8 +63,61 @@
 	    <div ng-view></div>
 
 
-	    <div style='position:absolute;left:0px;bottom:0px;text-align: center;height:5rem;line-height:5rem;width:100%;background: rgba(0, 0, 0, 0.95);;color: #968d8d'>Copyright  xxxxxxxx,All Rights Reserved. 
+	    <div style='position:absolute;left:0px;bottom:0px;text-align: center;height:5rem;line-height:5rem;width:100%;background: #7c6aa6;color: #FFFFFF'>Copyright  xxxxxxxx,All Rights Reserved. 
 	    </div>
+
+
+        <div class="layout-footer">
+          <div class="footer">
+            <div style="background-color:#383d61" class="footer--bg"></div>
+            <div class="footer--inner">
+              <div class="container">
+                <div class="footer_main">
+                  <div class="am-g">
+
+                    <div class="am-u-md-3 ">
+                      <div class="footer_main--column">
+                        <strong class="footer_main--column_title">product center</strong>
+                        <ul class="footer_navigation">
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("led")'>led</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("reflector")'>reflector</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("lens")'>lens</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("electricalSource")'>electricalSource</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="am-u-md-3 ">
+                      <div class="footer_main--column">
+                        <strong class="footer_main--column_title">site navigation</strong>
+                        <ul class="footer_navigation">
+                          <li class="footer_navigation--item"><a href="#/productGroup" class="footer_navigation--link">accessory project</a></li>
+                          <li class="footer_navigation--item"><a href="#/news" class="footer_navigation--link">news center</a></li>
+                          <li class="footer_navigation--item"><a href="#/about" class="footer_navigation--link">about us</a></li>
+                          <li class="footer_navigation--item"><a href="#/contact" class="footer_navigation--link">contact us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="am-u-md-3 ">
+                      <div class="footer_main--column">
+                        <strong class="footer_main--column_title">Contact details</strong>
+                        <ul class="footer_contact_info">
+                          <li class="footer_contact_info--item"><i class="am-icon-phone"></i><span>phone：13632880686 </span></li>
+                          <li class="footer_contact_info--item"><i class="am-icon-envelope-o"></i><span>mail: zdhdq0804@163.com</span></li>
+                          <li class="footer_contact_info--item"><i class="am-icon-map-marker"></i><span>address: Four 415 in the seiling industrial zone in the south of shenzhen city</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
 
 	  </div>
     <script type="text/javascript" src='./javascripts/jquery/dist/jquery.min.js'></script>
@@ -82,6 +135,5 @@
     <script type="text/javascript" src='./javascripts/newsCtrl.js'></script>
     <script type="text/javascript" src='./javascripts/productGroupCtrl.js'></script>
     <script type="text/javascript" src='./javascripts/directive/pagequery.js'></script>
-    <script type="text/javascript" src='./javascripts/directive/select.js'></script>
 </body>
 </html>

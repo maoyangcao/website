@@ -49,7 +49,7 @@ module.factory('getproduct',['$http',function($http){
 		}
 		this.init = function(fn){
 			this.pageNo =  1;
-			this.pageSize = 10;
+			this.pageSize = 12;
 			this.ajax(fn)
 		}
 	}
@@ -62,6 +62,7 @@ module.factory('getproduct',['$http',function($http){
 		productList:[
 			{
 				name:'reflector',
+				ch_name:'reflector',
 				active:true,
 				filtration:[
 					{
@@ -132,6 +133,7 @@ module.factory('getproduct',['$http',function($http){
 			},
 			{
 				name:'led',
+				ch_name:'led',
 				active:false,
 				filtration:[
 					{
@@ -139,7 +141,6 @@ module.factory('getproduct',['$http',function($http){
 						en_name:'series',
 						"for":true,
 						value:[
-							[
 								{value:"CXA1304",key:"CXA1304"},
 								{value:"CXA1507",key:"CXA1507"},
 								{value:"CXA1512",key:"CXA1512"},
@@ -159,9 +160,7 @@ module.factory('getproduct',['$http',function($http){
 								{value:"CXB1820",key:"CXB1820"},
 								{value:"CXB1830",key:"CXB1830"},
 								{value:"CXB2530",key:"CXB2530"},
-								{value:"CXB2540",key:"CXB2540"}
-							],
-							[
+								{value:"CXB2540",key:"CXB2540"},
 								{value:"CXB3050",key:"CXB3050"},
 								{value:"CXB3070",key:"CXB3070"},
 								{value:"CXB3590",key:"CXB3590"},
@@ -171,9 +170,7 @@ module.factory('getproduct',['$http',function($http){
 								{value:"XPGBWT",key:"XPGBWT"},
 								{value:"XPGDWT",key:"XPGDWT"},
 								{value:"XHP35A",key:"XHP35A"},
-								{value:"XHP50A",key:"XHP50A"}
-							],
-							[
+								{value:"XHP50A",key:"XHP50A"},
 								{value:"XHP50B",key:"XHP50B"},
 								{value:"XHP70A",key:"XHP70A"},
 								{value:"XPEBRD",key:"XPEBRD"},
@@ -185,12 +182,12 @@ module.factory('getproduct',['$http',function($http){
 								{value:"XBDBLU",key:"XBDBLU"},
 								{value:"XBDBPA",key:"XBDBPA"}
 							]
-						]
 					}
 				]
 			},
 			{
 				name:'lens',
+				ch_name:'lens',
 				active:false,
 				filtration:[
 					{
@@ -198,20 +195,17 @@ module.factory('getproduct',['$http',function($http){
 						en_name:'ledPn',
 						"for":true,
 						value:[
-							[
 								{value:"3030-LED series",key:'3030-LED series'},
 								{value:"CXA 15/18 series",key:'CXA 15/18 series'},
 								{value:"CXA 1507/1512",key:'CXA 1507/1512'},
 								{value:"CXA1304",key:'CXA1304'},
 								{value:"CXA1507/1512",key:'CXA1507/1512'},
 								{value:"XB-D",key:'XB-D'},
-								{value:"XML",key:'XML'}
-							],
-							[
+								{value:"XML",key:'XML'},
 								{value:"XPE",key:'XPE'},
 								{value:"XPG2/XPG3 ",key:'XPG2/XPG3 '},
 								{value:"XTE",key:'XTE'},
-								{value:"XP-G2/XP-G3",key:'XP-G2/XP-G3'}]
+								{value:"XP-G2/XP-G3",key:'XP-G2/XP-G3'}
 						]
 					},
 					{
@@ -276,6 +270,7 @@ module.factory('getproduct',['$http',function($http){
 			},
 			{
 				name:'electricalSource',
+				ch_name:'电源',
 				active:false,
 				filtration:[
 					{
@@ -304,7 +299,7 @@ module.factory('getproduct',['$http',function($http){
 					{key:'型号',value:'model',noDetail:true,title:true},
 					{key:'系列',value:'series',noDetail:true,title:true},
 					{key:'系列英文',value:'seriesEn'},
-					{key:'半光强角度',value:'fwhm'},
+					{key:'半光强角度',value:'fwhm',noDetail:true},
 					{key:'直径',value:'diameter',noDetail:true},
 					{key:'高度',value:'height',noDetail:true},
 					{key:'底径',value:'bottomDiameter',noDetail:true},

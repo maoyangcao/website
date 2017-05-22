@@ -64,7 +64,7 @@
 
 
 
-	    <div style='position:absolute;left:0px;bottom:0px;text-align: center;height:5rem;line-height:5rem;width:100%;background: rgba(0, 0, 0, 0.95);;color: #968d8d'>版权所有：深圳市一加一照明科技有限公司 
+	    <div style='position:absolute;left:0px;bottom:0px;text-align: center;height:5rem;line-height:5rem;width:100%;background: #7c6aa6;color: #FFFFFF'>版权所有：深圳市一加一照明科技有限公司 
 	    </div>
 
         <div class="layout-footer">
@@ -79,10 +79,10 @@
                       <div class="footer_main--column">
                         <strong class="footer_main--column_title">产品中心</strong>
                         <ul class="footer_navigation">
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">led</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">reflector</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">lens</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">电源</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("led")'>led</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("reflector")'>reflector</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("lens")'>lens</a></li>
+                          <li class="footer_navigation--item"><a class="footer_navigation--link" ng-click='changeProducts("electricalSource")'>电源</a></li>
                         </ul>
                       </div>
                     </div>
@@ -91,10 +91,10 @@
                       <div class="footer_main--column">
                         <strong class="footer_main--column_title">网站导航</strong>
                         <ul class="footer_navigation">
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">配套方案</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">新闻中心</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">关于我们</a></li>
-                          <li class="footer_navigation--item"><a href="#" class="footer_navigation--link">联系我们</a></li>
+                          <li class="footer_navigation--item"><a href="#/productGroup" class="footer_navigation--link">配套方案</a></li>
+                          <li class="footer_navigation--item"><a href="#/news" class="footer_navigation--link">新闻中心</a></li>
+                          <li class="footer_navigation--item"><a href="#/about" class="footer_navigation--link">关于我们</a></li>
+                          <li class="footer_navigation--item"><a href="#/contact" class="footer_navigation--link">联系我们</a></li>
                         </ul>
                       </div>
                     </div>
@@ -132,6 +132,5 @@
     <script type="text/javascript" src='./javascripts/newsCtrl.js'></script>
     <script type="text/javascript" src='./javascripts/productGroupCtrl.js'></script>
     <script type="text/javascript" src='./javascripts/directive/pagequery.js'></script>
-    <script type="text/javascript" src='./javascripts/directive/select.js'></script>
 </body>
 </html>

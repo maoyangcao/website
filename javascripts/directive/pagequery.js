@@ -9,7 +9,7 @@ module.directive('pagequery',function(){
 		template:'<div class="pagequery">'
 					+'<span ng-click="first()" ng-en="first page">首页</span>'
 					+'<span ng-click="pre()" ng-en="previous page">上一页</span>'
-					+'<span ng-repeat="num in pageList" ng-bind="num" ng-click="changePage(num)" ng-class={"true":"pagequery_select"}[num==page] ng-if="page-num ==1 || page-num == 0 ||page-num ==-1 "></span>'
+					+'<span ng-repeat="num in pageList track by $index" ng-bind="num" ng-click="changePage(num)" ng-class={"true":"pagequery_select"}[num==page] ng-if="page-num ==1 || page-num == 0 ||page-num ==-1 "></span>'
 					+'<span ng-click="next()" ng-en="next page">下一页</span>'
 					+'<span ng-click="last()"ng-en="trailer page">尾页</span>'
 				 +'</div>'
