@@ -5,6 +5,7 @@ module.factory('getproduct',['$http',function($http){
 		this.url = '/plus-admin/product/'+url+'/queryPage';
 		this.langueType = 1;
 		this.ajax = function(fn){
+			console.log(document.body.clientWidth)
 			var ajaxData = JSON.parse(JSON.stringify(this))
 			if(ajaxData.seriesEn){
 				ajaxData.series = ajaxData.seriesEn
