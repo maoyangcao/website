@@ -321,7 +321,7 @@ module.factory('getproduct',['$http',function($http){
 					{key:'材质',value:'material'}
 				],
 				electricalSource:[
-					{key:'系列',value:'inventronicsSeriesFuzzy',noDetail:true},
+					{key:'系列',value:'inventronicsSeries',noDetail:true},
 					{key:'输入电压',value:'inputVoltage',noDetail:true},
 					{key:'恒功率可编程',value:'rogrammableRange',noDetail:true},
 					{key:'安全认证',value:'safetyCertification',noDetail:true},

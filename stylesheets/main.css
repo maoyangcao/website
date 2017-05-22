@@ -249,11 +249,8 @@ body{
 	color: #FFFFFF;
 }
 .product_desc{
-	display: table;
+	display: block;
 	padding:0.2rem 0rem;
-}
-.product_desc span{
-	display: table-cell;
 }
 .selectShadow i:hover{
 	color:#CCC;
@@ -274,7 +271,7 @@ body{
 	font-size: 12px;
 	font-family: "helvetica neue",arial,sans-serif;
 	margin: 0px;
-	display: inline-block;
+	display: block;
 	padding: 0 5px;
 	line-height: 1.35em;
 	overflow: hidden;
