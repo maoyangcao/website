@@ -89,9 +89,9 @@
                                       </div>
                                       <div class="products_detail">
                                           <div class='product_desc' ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
-                                              <span ng-if='$parent.language=="chinese"' ng-bind='item.key'></span>
-                                              <span ng-if='$parent.language=="english"' ng-bind='item.value'></span>
-                                              <span ng-bind='items[item.value]' ></span>
+                                              <span ng-if='$parent.language=="chinese"'><strong>{{item.key}}</strong>：&nbsp;&nbsp;&nbsp;&nbsp;{{items[item.value]}}</span>
+                                              <span ng-if='$parent.language=="english"'><strong>{{item.value}}</strong>：&nbsp;&nbsp;&nbsp;&nbsp;{{items[item.value]}}</span>
+                                              <span ng-bind='' ></span>
                                           </div>
                                       </div>
 
