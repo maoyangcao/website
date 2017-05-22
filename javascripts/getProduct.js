@@ -5,12 +5,7 @@ module.factory('getproduct',['$http',function($http){
 		this.url = '/plus-admin/product/'+url+'/queryPage';
 		this.langueType = 1;
 		this.ajax = function(fn){
-			console.log(document.body.clientWidth)
 			var ajaxData = JSON.parse(JSON.stringify(this))
-			if(ajaxData.seriesEn){
-				ajaxData.series = ajaxData.seriesEn
-				ajaxData.seriesEn = undefined;
-			}
 			if(window.language != 'chinese')
 				ajaxData.langueType = 2;
 			$http.post(this.url,ajaxData).success(function(data){
@@ -21,6 +16,8 @@ module.factory('getproduct',['$http',function($http){
 								item.series = item.seriesEn;
 							if(item.dimensionX&&item.dimensionY)
 								item.size = item.dimensionX+'*'+item.dimensionY
+							if(item.size&&item.dimensionZ)
+								item.size += '*'+item.dimensionZ
 							Object.keys(item).forEach(function(key){
 								if(item[key]&&item[key].split)
 									item[key] =  item[key].split('\n').join('<br/>')
@@ -50,7 +47,10 @@ module.factory('getproduct',['$http',function($http){
 		}
 		this.init = function(fn){
 			this.pageNo =  1;
-			this.pageSize = 12;
+			if(document.body.clientWidth<1400)
+				this.pageSize = 6;
+			else
+				this.pageSize = 12;
 			this.ajax(fn)
 		}
 	}
@@ -70,12 +70,12 @@ module.factory('getproduct',['$http',function($http){
 						name:'系列',
 						en_name:'series',
 						value:[
-							{value:"Series SL reflector",key:'SL反光杯系列',en_key:'Series SL reflector'},
-							{value:"Series SL-E liner reflector",key:'SL-E条形灯反光杯系列',en_key:'Series SL-E liner reflector'},
-							{value:"Series SL-B ODR lens",key:'SL-B电镀透镜系列',en_key:'Series SL-B ODR lens'},
-							{value:"Series SL deep anti-glare reflector",key:'SL深防眩反光杯',en_key:'Series SL deep anti-glare reflector'},
-							{value:"Series SL-D TIR lens",key:'SL-D全反射透镜系列',en_key:'Series SL-D TIR lens'},
-							{value:"Series SL-A reflector with lens",key:'SL-A反光杯加透镜系列',en_key:'Series SL-A reflector with lens'}
+							{key:'SL反光杯系列',en_key:'Series SL reflector'},
+							{key:'SL-E条形灯反光杯系列',en_key:'Series SL-E liner reflector'},
+							{key:'SL-B电镀透镜系列',en_key:'Series SL-B ODR lens'},
+							{key:'SL深防眩反光杯',en_key:'Series SL deep anti-glare reflector'},
+							{key:'SL-D全反射透镜系列',en_key:'Series SL-D TIR lens'},
+							{key:'SL-A反光杯加透镜系列',en_key:'Series SL-A reflector with lens'}
 						]
 					},
 					{
@@ -276,7 +276,7 @@ module.factory('getproduct',['$http',function($http){
 				filtration:[
 					{
 						name:'系列',
-						en_name:'inventronicsSeries',
+						en_name:'inventronicsSeriesFuzzy',
 						value:[
 							{value:"EBD",key:'EBD'},
 							{value:"EUG",key:'EUG'},
@@ -321,7 +321,7 @@ module.factory('getproduct',['$http',function($http){
 					{key:'材质',value:'material'}
 				],
 				electricalSource:[
-					{key:'系列',value:'inventronicsSeries',noDetail:true},
+					{key:'系列',value:'inventronicsSeriesFuzzy',noDetail:true},
 					{key:'输入电压',value:'inputVoltage',noDetail:true},
 					{key:'恒功率可编程',value:'rogrammableRange',noDetail:true},
 					{key:'安全认证',value:'safetyCertification',noDetail:true},
@@ -353,7 +353,7 @@ module.factory('getproduct',['$http',function($http){
 			})
 			var key = '';
 			for(i in data){
-				if(i == 'series')
+				if(i == 'series' && window.language != 'chinese')
 					key = 'seriesEn'
 				else
 					key = i

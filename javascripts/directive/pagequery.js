@@ -22,9 +22,11 @@ module.directive('pagequery',function(){
 		 link:function(scope){
 			scope.pageList = [];
 			scope.$watch('allpage',function(news){
-				if(news)
+				if(news){
+					scope.pageList = [];
 					for(var i=1; i<= scope.allpage; i++)
 						scope.pageList.push(i)
+				}
 			})
 	 		scope.changePage = function (num){
 				scope.page = num;

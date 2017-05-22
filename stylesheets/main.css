@@ -2,8 +2,8 @@ html{
 	font-size: 10px;
 	height: 100%;
 }
-*{
-	    /*font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif !important;*/
+.nav-contain{
+	background: #FFF;
 }
 body{
 	padding-bottom: 5rem !important;
@@ -196,7 +196,7 @@ body{
 	cursor: pointer;
 }
 .products{
-	width:15rem;
+	width:16rem;
 	display:inline-block;
 	background:#FFF;
 	margin: 3rem 2.5rem;
@@ -248,6 +248,13 @@ body{
 	font-size: 28px;
 	color: #FFFFFF;
 }
+.product_desc{
+	display: table;
+	padding:0.2rem 0rem;
+}
+.product_desc span{
+	display: table-cell;
+}
 .selectShadow i:hover{
 	color:#CCC;
 }
@@ -263,6 +270,7 @@ body{
 	min-height:500px;
 }
 .products p,span{
+    vertical-align: top;
 	font-size: 12px;
 	font-family: "helvetica neue",arial,sans-serif;
 	margin: 0px;
@@ -273,7 +281,7 @@ body{
 	word-wrap: break-word;
 }
 .products_detail{
-	padding:1rem;
+	padding:0.5rem 1rem;
 }
 .products img{
     width: 8rem;

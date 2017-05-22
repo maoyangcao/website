@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/image-swiper.css">
 <style type="text/css">
-  @media screen and (min-width: 1900px) {
+  @media screen and (min-width: 1200px) {
     .container {
-        width:1550px !important;
+        width:1250px !important;
     }
   }
   @media screen and (min-width: 1700px) {
@@ -10,9 +10,9 @@
         width:1450px !important;
     }
   }
-    @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1900px) {
     .container {
-        width:1250px !important;
+        width:1550px !important;
     }
   }
   /*
@@ -59,7 +59,8 @@
                                 <label for="doc-select-1" ng-bind='item.name' ng-en='{{item.en_name}}'></label>
                                 <select style="width:100%;" ng-model='productPrarm[item.en_name]'>
                                     <option value="" ng-en='all'>全部</option>
-                                    <option value='{{value.value}}' ng-repeat='value in item.value' ng-en='{{value.en_key||value.key}}'ng-bind='value.key'></option>
+                                    <option value='{{value.value||value.key}}' ng-repeat='value in item.value' ng-en='{{value.en_key||value.key}}'ng-bind='value.key' ng-if='$parent.language=="chinese"'></option>
+                                    <option value='{{value.value||value.en_key}}' ng-repeat='value in item.value' ng-en='{{value.en_key||value.key}}'ng-bind='value.key' ng-if='$parent.language!="chinese"'></option>
                                 </select>
                                 <hr data-am-widget="divider" style="" class="am-divider am-divider-dashed" />
                             </div>
@@ -80,16 +81,17 @@
 					  <div>
                           <div class="productList" ng-repeat='product in productList' ng-if='product.active'>
                               <div class="am-panel-hd" style='color: #444;background-color: #f5f5f5;border-color: #ddd;' ng-bind='product.ch_name' ng-en='{{product.name}}' ></div>
+                              <p ng-if="list.body[product.name].length==0" ng-en='There is no such product' style='text-align:center;margin-top:4rem;font-weight:bold;letter-spacing:1px'>没有此类型产品</p>
                               <div class="products_cell">
                                   <div class="products" ng-repeat='items in list.body[product.name]' ng-click='showDetail(list.head[product.name],items)'>
                                       <div style='margin:2px;position: relative;'>
                                           <img ng-src='{{items.imgUrls}}' style='border-radius: 4px;margin: 0 auto;padding:1.5rem 0rem;'></img>
                                       </div>
                                       <div class="products_detail">
-                                          <div ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
+                                          <div class='product_desc' ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
                                               <span ng-if='$parent.language=="chinese"' ng-bind='item.key'></span>
                                               <span ng-if='$parent.language=="english"' ng-bind='item.value'></span>
-                                              <span ng-bind='items[item.value]'></span>
+                                              <span ng-bind='items[item.value]' ></span>
                                           </div>
                                       </div>
 
@@ -98,75 +100,12 @@
                               <div ng-if="list.body[product.name].length>0">
                                   <pagequery allpage='product.totalPage' page='product.pageNo' getnews='getList'></pagequery>
                               </div>
-                              <p ng-if="list.body[product.name].length==0" ng-en='There is no such product' style='text-align:center;margin-top:4rem;font-weight:bold;letter-spacing:1px'>没有此类型产品</p>
                           </div>
 					  </div>
 					</div>
 
 				</div>
 			</div>
-<!-- <div id='product' >
-    <div class="example-container">
-        <div class="am-tabs" data-am-tabs="" style='background: #FFF'>
-            <div style='padding: 1rem 0px'>
-                    <div ng-repeat='product in productList' ng-if='product.active'>
-                        <div class="selected_item" ng-repeat='item in product.filtration' ng-if='!item.for'>
-                            <i class='glyphicon glyphicon-play' style='font-size: 1.3rem'></i>
-                            <span ng-if='$parent.language == "chinese"' ng-bind='item.name'></span>
-                            <span ng-if='$parent.language == "english"' ng-bind='item.en_name'></span>
-                            <ul style='margin:0px'>
-                                <li ng-repeat='value in item.value' value='{{value.value}}' ng-if='$parent.language == "chinese"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.key'></li>
-                                <li ng-repeat='value in item.value' value='{{value.value}}' ng-if='$parent.language == "english"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.en_key||value.key'></li>
-                            </ul>
-                        </div>
-                        <div class="selected_item" ng-repeat='item in product.filtration' ng-if='item.for' style='display: flex;align-items: center;'>
-                            <i class='glyphicon glyphicon-play' style='font-size: 1.3rem'></i>
-                            <span ng-if='$parent.language == "chinese"' style='height:100%' ng-bind='item.name'></span>
-                            <span ng-if='$parent.language == "english"' style='height:100%' ng-bind='item.en_name'></span>
-                            <div style='display: inline-block;width:80%'>
-                                  <div ng-repeat='values in item.value' >
-                                    <ul  style='margin:0px'>
-                                    <li ng-repeat='value in values' value='{{value.value}}' ng-if='$parent.language == "chinese"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.key'></li>
-                                    <li ng-repeat='value in values' value='{{value.value}}' ng-if='$parent.language == "english"' ng-click='choose(product,item.en_name,value.value)'  ng-class='{"true":"selected-item"}[product.selectedKey[item.en_name] == value.value]' ng-bind='value.en_key||value.key'></li>
-                                </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-            </div>
-    <div style="display:table;position:relative;background:#f5f5f5;min-height: 400px;width: 100%;">
-        <div class="productList" ng-repeat='product in productList' ng-if='product.active'>
-            <div class="products_cell">
-                <div class="products" ng-repeat='items in list.body[product.name]' >
-                    <div style='margin:2px;position: relative;'>
-                        <a style='background-image: url({{items.imgUrls}});background-repeat: no-repeat;background-size: 100% 100%;border-radius: 4px'>
-                        <div style='' class='selectShadow'>
-                            <div class='icon_plus' ng-click='showpic(items.imgUrls,items.imgUrlList)'>
-                                <span>+</span>
-                            </div>
-                            <i class='glyphicon glyphicon-list-alt'  data-toggle="modal" data-target="#myModal" ng-click='showDetail(list.head[product.name],items)' style='margin-left: 20px;'></i>
-                        </div>
-                    </a>
-                    </div>
-
-                    <div class="products_detail">
-                        <div ng-repeat='item in list.head[product.name]' ng-if='item.noDetail'>
-                            <span ng-if='$parent.language=="chinese"' ng-bind='item.key'></span>
-                            <span ng-if='$parent.language=="english"' ng-bind='item.value'></span>
-                            <span ng-bind='items[item.value]'></span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div ng-if="list.body[product.name].length>0">
-                <pagequery allpage='product.totalPage' page='product.pageNo' getnews='getList'></pagequery>
-            </div>
-            <p style='text-align:center;margin-top:4rem' ng-if="list.body[product.name].length==0">没有此类型产品</p>
-        </div>
-    </div> -->
-
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document" style='margin:100px auto;border-radius: 0px'>
