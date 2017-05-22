@@ -252,6 +252,9 @@ body{
 	display: block;
 	padding:0.2rem 0rem;
 }
+.product_desc span{
+	display: block;
+}
 .selectShadow i:hover{
 	color:#CCC;
 }
@@ -267,11 +270,10 @@ body{
 	min-height:500px;
 }
 .products p,span{
-    vertical-align: top;
 	font-size: 12px;
 	font-family: "helvetica neue",arial,sans-serif;
 	margin: 0px;
-	display: block;
+	display: inline-block;
 	padding: 0 5px;
 	line-height: 1.35em;
 	overflow: hidden;
