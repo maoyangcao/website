@@ -69,6 +69,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'系列',
 						en_name:'series',
+						en_label_name:'Series',
 						value:[
 							{key:'SL反光杯系列',en_key:'Series SL reflector'},
 							{key:'SL-E条形灯反光杯系列',en_key:'Series SL-E liner reflector'},
@@ -81,6 +82,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'直径/长',
 						en_name:'rangeDimensionX',
+						en_label_name:'Diameter/Length',
 						value:[
 							{value:"0-19",key:'0-19mm'},
 							{value:"20-39",key:'20-39mm'},
@@ -94,6 +96,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'厚/宽',
 						en_name:'rangeDimensionY',
+						en_label_name:'Thickness/Width',
 						value:[
 							{value:"0-9",key:'0-9mm'},
 							{value:"10-19",key:'10-19mm'},
@@ -107,6 +110,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'底经/高',
 						en_name:'rangeDimensionZ',
+						en_label_name:'Bottom diameter/High',
 						value:[
 							{value:"0-9",key:'0-9mm'},
 							{value:"10-19",key:'10-19mm'},
@@ -120,6 +124,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'角度',
 						en_name:'rangeAngel',
+						en_label_name:'Beam angle',
 						value:[
 							{value:"0-9°",key:'0-9°'},
 							{value:"10-19°",key:'10-19°'},
@@ -140,6 +145,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'系列',
 						en_name:'series',
+						en_label_name:'Series',
 						"for":true,
 						value:[
 								{value:"CXA1304",key:"CXA1304"},
@@ -194,6 +200,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'光源型号',
 						en_name:'ledPn',
+						en_label_name:'Led pn',
 						"for":true,
 						value:[
 								{value:"3030-LED series",key:'3030-LED series'},
@@ -212,6 +219,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'直径/长',
 						en_name:'rangeDimensionX',
+						en_label_name:'Diameter/Length',
 						value:[
 							{value:"0-19",key:'0-19mm'},
 							{value:"20-39",key:'20-39mm'},
@@ -225,6 +233,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'厚/宽',
 						en_name:'rangeDimensionY',
+						en_label_name:'Thickness/Width',
 						value:[
 							{value:"0-9",key:'0-9'},
 							{value:"10-19",key:'10-19'},
@@ -236,8 +245,9 @@ module.factory('getproduct',['$http',function($http){
 						]
 					},
 					{
-						name:'底经/高',
+						name:'底径/高',
 						en_name:'rangeDimensionZ',
+						en_label_name:'Bottom diameter/High',
 						value:[
 							{value:"0-9",key:'0-9'},
 							{value:"10-19",key:'10-19'},
@@ -251,6 +261,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'角度',
 						en_name:'rangeAngel',
+						en_label_name:'Beam angle',
 						value:[
 							{value:"0-9°",key:'0-9°'},
 							{value:"10-19°",key:'10-19°'},
@@ -277,6 +288,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'系列',
 						en_name:'inventronicsSeriesFuzzy',
+						en_label_name:'Series',
 						value:[
 							{value:"EBD",key:'EBD'},
 							{value:"EUG",key:'EUG'},
@@ -286,6 +298,7 @@ module.factory('getproduct',['$http',function($http){
 					{
 						name:'输入电压',
 						en_name:'inputVoltage',
+						en_label_name:'Input voltage',
 						value:[
 							{value:"90-305V",key:'90-305V'},
 							{value:"176-305V",key:'176-305V'}

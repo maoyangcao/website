@@ -56,7 +56,7 @@
 						<form class="am-form">
 						<fieldset ng-repeat='product in productList' ng-if='product.active'>
                             <div ng-repeat='item in product.filtration'>
-                                <label for="doc-select-1" ng-bind='item.name' ng-en='{{item.en_name}}'></label>
+                                <label for="doc-select-1" ng-bind='item.name' ng-en='{{item.en_label_name}}'></label>
                                 <select style="width:100%;" ng-model='productPrarm[item.en_name]'>
                                     <option value="" ng-en='all'>全部</option>
                                     <option value='{{value.value||value.key}}' ng-repeat='value in item.value' ng-en='{{value.en_key||value.key}}'ng-bind='value.key' ng-if='$parent.language=="chinese"'></option>
